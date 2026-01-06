@@ -1,0 +1,44 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  min-width: 320px;
+  color: var(--color-white);
+  background-color: light dark(#f1f1f1, #23272E);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 100px 30px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button,
+input,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  transition-duration: var(--transition-duration);
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-gray-1);
+  outline-offset: 2px;
+  transition-duration: 0s !important;
+}
