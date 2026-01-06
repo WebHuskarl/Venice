@@ -1,8 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
+  font-family: "Manrope", sans-serif;
+ }
+/* body {
   font-weight: 400;
   min-width: 320px;
   color: var(--color-white);
@@ -41,4 +43,4 @@ label {
   outline: 2px dashed var(--color-gray-1);
   outline-offset: 2px;
   transition-duration: 0s !important;
-}
+} */

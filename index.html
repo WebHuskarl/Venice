@@ -8,8 +8,126 @@
   <script src="js/main.js" type="module"></script>
 </head>
 <body>
-  
 
-  
+  <header class="header">
+    <div class="container header__container">
+
+      <a href="#" class="header__logo">
+        <svg width="260" height="70" viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg">
+          <!-- Иконка-имплант -->
+          <g transform="translate(5,5)" fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 6
+             C24 0, 16 0, 12 6
+             C8 0, 0 2, 2 12
+             C4 24, 10 30, 16 30
+             C22 30, 28 24, 30 12
+             C32 2, 24 0, 20 6 Z" />
+          <rect x="13" y="30" width="6" height="16" rx="2" />
+          <path d="M11 34 L21 34
+             M11 38 L21 38
+             M11 42 L21 42
+             M11 46 L21 46" />
+          </g>
+
+          <!-- Текст -->
+          <g fill="#000000" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+
+          <text x="56" y="22" font-size="22" font-weight="600">
+           Венеция
+          </text>
+          <text x="56" y="38" font-size="13">
+            клиника зубной
+          </text>
+          <text x="56" y="52" font-size="13">
+            имплантации
+          </text>
+          </g>
+        </svg>
+      </a>
+
+      <div class="header__contacts">
+        <a class="header__contacts-phone"
+          href="tel:+78000000000">
+          +7 (800) 000‑00‑00
+        </a>
+        <span class="header__contacts-phone-worktime">09:00-21:30</span>
+      </div>
+      
+      <button class="header__button" type="button">
+        Перезвоните мне
+      </button>
+
+      <button class="header__menu header__burger burger-button" aria-expanded="false" aria-controls="header-nav">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+
+      <!-- <nav class="header__nav" id="header-nav">
+        <ul class="header__nav-list">
+          <li><a href="#" class="header__nav-link">Home</a></li>
+          <li><a href="#about" class="header__nav-link">About</a></li>
+          <li><a href="#products" class="header__nav-link">Products</a></li>
+          <li><a href="#contact" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav> -->
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <hero class="hero">
+      <div class="container hero__container">
+
+        <div class="hero__video-wrapper">
+          <video class="hero__video-media" poster="preview.jpg">
+            <source src="video.mp4" type="video/mp4">
+          </video>
+
+          <div class="hero__video-preview-block">
+            <img src="" alt="" class="hero__video-preview-img">
+            <p class="hero__video-preview-text"></p>
+            <p class="hero__video-preview-text"></p>
+          </div>
+
+          <ul class="hero__video-list">
+            <li class="hero__video-item"></li>
+            <li class="hero__video-item"></li>
+            <li class="hero__video-item"></li>
+          </ul>
+        </div>
+
+        <div class="hero__info-wrapper">
+
+          <div class="hero__info-title">
+            <h1>Новые зубы за 1 день</h1>
+            <p>— без боли,</p>
+            <p>даже в сложных случаях</p>
+          </div>
+
+          <div class="hero__info-action">
+            <h3 class="hero__info-action-title">Акция 
+              до 31 октября</h3>
+            <p class="hero__info-action-text">Запишитесь на бесплатную консультацию и получите подарок:</p>
+            <p class="hero__info-action-text">Консультация ортопеда</p>
+            <p class="hero__info-action-text">КТ с расшифровкой</p>
+          </div>
+
+          <div class="hero__info-price">
+            <p>110 000 ₽</p>
+            <span>180 000 ₽</span>
+          </div>
+
+          <div class="hero__info-picture">
+            <img src="" alt="" class="hero__info-picture-img">
+          </div>
+        </div>
+
+      </div>
+    </hero>
+
+  </main>
+
 </body>
 </html>
