@@ -1,0 +1,63 @@
+.header { 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.header__container {
+	padding-top: 30px;
+	display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  z-index: 300;
+}
+
+.header__contacts {
+  margin-left: auto;
+}
+
+.header__contacts-phone {
+  margin-right: 24px;
+  font-style: Medium;
+  font-weight: 500;
+}
+
+.header__contacts-phone-worktime {
+  font-style: Regular;
+  font-size: 14px;
+}
+
+.header__call-button {
+  width: 186px;
+  height: 55px;
+  box-sizing: border-box;
+  padding: 18px 24px 18px 24px;
+  color: var(--color-black);
+  border: 1px solid rgba(228, 228, 228, 1);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  margin-left: 48px;
+}
+
+.header__burger {
+  margin-left: 26px;
+  padding: 22px 0 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 600;
+}
+
+.header__burger-line {
+  width: 22px;
+  height: 2px; 
+  background-color: var(--color-black);
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+}
+
+.header__burger-line:nth-of-type(2) {
+  width: 14px;
+}

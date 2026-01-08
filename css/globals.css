@@ -3,8 +3,13 @@ html {
 }
 body {
   font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+	min-width: 320px;
+  line-height: 120%;
  }
-/* body {
+/*  
+body {
   font-weight: 400;
   min-width: 320px;
   color: var(--color-white);
@@ -16,11 +21,15 @@ body {
   padding: 100px 30px;
   font-family: "Inter", sans-serif;
   line-height: 1.7;
-}
+} */
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 button {
@@ -36,9 +45,17 @@ label {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  transition-duration: var(--transition-duration);
+  /* transition-duration: var(--transition-duration); */
 }
 
+.container {
+  overflow: hidden;
+  width: 1280px;
+  max-height: 838px;
+  box-sizing: border-box;
+}
+
+/* 
 :focus-visible {
   outline: 2px dashed var(--color-gray-1);
   outline-offset: 2px;
