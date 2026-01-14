@@ -10,7 +10,8 @@
   --color-gray-5: rgba(246, 246, 246, 1);
   --color-gray-6: rgba(239, 239, 239, 0.45);
 
-  --color-blue: rgba(64, 96, 170, 1);
+  --color-blue-1: rgba(64, 96, 170, 1);
+  --color-blue-2: rgba(112, 135, 191, 1);
 
 
   --border: 1px solid rgba(245, 245, 245, 1);
