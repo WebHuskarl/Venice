@@ -57,20 +57,23 @@
         Перезвоните мне
       </button>
 
-      <button class="header__menu header__burger burger-button" >
+      <button class="header__menu header__burger burger-button" 
+      data-burger-toggle 
+      aria-expanded="false"
+      aria-controls="header-nav">
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
       </button>
 
-      <!-- <nav class="header__nav" id="header-nav">
+      <nav class="header__nav" id="header-nav">
         <ul class="header__nav-list">
           <li><a href="#" class="header__nav-link">Home</a></li>
           <li><a href="#about" class="header__nav-link">About</a></li>
           <li><a href="#products" class="header__nav-link">Products</a></li>
           <li><a href="#contact" class="header__nav-link">Contact</a></li>
         </ul>
-      </nav> -->
+      </nav>
 
     </div>
   </header>
@@ -81,7 +84,16 @@
       <div class="container hero__container">
 
         <div class="hero__video-wrapper">
-          <img class="hero__video-media" src="/images/hero__video.png" alt="видео" >
+          <div class="hero__video-mask" data-video-toggle>
+            <video class="hero__video-media"
+            src="/videos/hero__video.mp4"
+            poster="/images/hero__video.png"
+            /*autoplay*/
+            muted
+            loop
+            playsinline>
+            </video>
+          </div>
 
           <div class="hero__video-preview-block">
             <img class="hero__video-preview-img"
@@ -99,7 +111,6 @@
         </div>
 
         <div class="hero__info-wrapper">
-
           <div class="hero__info-title">
             <h1>Новые зубы за 1 день</h1>
             <p>— без боли,</p>

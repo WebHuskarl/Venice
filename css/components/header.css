@@ -39,6 +39,7 @@
   border-radius: var(--border-radius);
   font-weight: 500;
   margin-left: 48px;
+  transition: margin-left 0.3s ease;
 }
 
 .header__burger {
@@ -48,16 +49,93 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  z-index: 600;
+  z-index: 601;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-button.active {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  margin-left: 0;
+  background: rgba(27, 27, 27, 0.95);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
 }
 
 .header__burger-line {
   width: 22px;
-  height: 2px; 
+  height: 2px;
   background-color: var(--color-black);
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .header__burger-line:nth-of-type(2) {
   width: 14px;
+}
+
+.burger-button.active .header__burger-line:nth-of-type(1) {
+  transform: rotate(45deg);
+  background-color: #fff;
+  width: 22px;
+  top: 0;
+}
+
+.burger-button.active .header__burger-line:nth-of-type(2) {
+  opacity: 0;
+}
+
+.burger-button.active .header__burger-line:nth-of-type(3) {
+  transform: rotate(-45deg);
+  background-color: #fff;
+  width: 22px;
+  top: 0;
+}
+
+.burger-button.active ~ .header__call-button {
+  margin-left: 144px;
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: rgba(27, 27, 27, 0.98);
+  backdrop-filter: blur(20px);
+  transition: right 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 500;
+  padding: 120px 40px 60px;
+  overflow-y: auto;
+  box-shadow: -4px 0 30px rgba(0,0,0,0.3);
+}
+
+.header__nav.active {
+  right: 0;
+}
+
+.header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 16px 0;
+  color: rgba(241, 241, 238, 1);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(241, 241, 238, 0.2);
+  transition: all 0.3s ease;
+}
+
+.header__nav-link:hover {
+  color: #fff;
+  padding-left: 10px;
 }

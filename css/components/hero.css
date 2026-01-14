@@ -14,10 +14,21 @@
   max-width: 640px;
 }
 
-.hero__video-media {
+.hero__video-mask {
   position: absolute;
   top: 30px;
   z-index: 100;
+  width: 640px;
+  height: 838px;
+  overflow: hidden;
+  clip-path: path("M610 0c16.569 0 30 13.432 30 30v778c0 16.569-13.431 30-30 30H291.024c-16.568 0-30-13.431-30-30V571.297c0-16.569-13.431-30-30-30H30c-16.568 0-30-13.432-30-30v-396.97c0-16.568 13.432-30 30-30h186.767c16.568 0 30-13.431 30-30V30c0-16.568 13.431-30 30-30z");
+  cursor: pointer;
+}
+
+.hero__video-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero__video-preview-block {
