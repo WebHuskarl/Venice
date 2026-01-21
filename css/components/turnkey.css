@@ -1,0 +1,72 @@
+.turnkey {
+  display: flex;
+  justify-content: center;
+  padding-top: 90px;
+  margin-bottom: 60px;
+  height: 980px;
+}
+
+.turnkey__top {
+  height: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.turnkey__title {
+  width: 877px;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.turnkey__title-span {
+  width: 640px;
+  color: var(--color-blue-1);
+  margin-left: 72px;
+}
+
+.turnkey__countries-block {
+  width: 322px;
+  height: 270px;
+  display: flex;
+  align-items: end;
+  background-color: var(--color-gray-1);
+  clip-path: path('M292 0C308.568 0.000123192 322 13.4316 322 30V240C322 256.568 308.568 270 292 270H30C13.4315 270 0 256.569 0 240V92C0 75.4315 13.4315 62 30 62H31.1123C47.6808 62 61.1123 48.5685 61.1123 32V30C61.1123 13.4315 74.5438 0 91.1123 0H292Z');
+}
+
+.turnkey__contries-content {
+  width: 250px;
+  height: 120px;
+  margin: 0 36px 36px;
+}
+
+.turnkey__countries-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.turnkey__implantation {
+  width: 700px;
+  height: 650px;
+  box-sizing: border-box;
+  padding: 36px;
+  background-color: var(--color-gray-1);
+  border-radius: var(--border-radius-md);
+  border: var(--border);
+}
+
+.turnkey__implantation-phase-number {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 21px;
+  color: var(--color-blue-1);
+}
+
+.turnkey__implantation-title {
+  width: 478px;
+  font-weight: 700;
+  font-size: 32px;
+}
