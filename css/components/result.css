@@ -1,17 +1,21 @@
 .result {
   background-color: var(--color-gray-1);
-  padding-top: 90px;
+  padding: 90px 0;
   display: flex;
   justify-content: center;
   height: 880px;
 }
 
-.result__info-text h2{
+.result__container {
+  display: flex;
+}
+
+.result__info-title{
   width: 750px;
   height: 240px;
 }
 
-.result__info-text p {
+.result__info-descr {
   width: 478px;
   height: 72px;
   font-weight: 600;
@@ -21,13 +25,150 @@
 
 .result__info-cards-list {
   display: grid;
-  grid-template-columns: repeat(2, max-content); 
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, max-content);
   gap: 16px;
 }
 
 .result__info-cards-item {
+  position: relative;
   width: 322px;
   height: 212px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result__info-cards-item:nth-of-type(1) {
+  color: var(--color-white);
+}
+
+.result__info-cards-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  clip-path: path('M230.112 0C246.681 0 260.112 13.4315 260.112 30V32C260.112 48.5685 273.544 62 290.112 62H292C308.569 62 322 75.4315 322 92V182C322 198.569 308.569 212 292 212H30C13.4315 212 0 198.569 0 182V30C0 13.4315 13.4315 0 30 0H230.112Z');
+  z-index: 100;
+}
+
+.result__info-cards-item:nth-of-type(1)::before {
   background-color: var(--color-blue-1);
+  
+}
+
+.result__info-cards-number {
+  align-self: flex-end;
+  margin: 19px 19px 0 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-blue-1);
+  z-index: 200;
+  position: relative;
+}
+
+.result__info-cards-title,
+.result__info-cards-text {
+  position: relative;
+  z-index: 200;
+}
+
+.result__info-cards-title {
+  margin-top: auto;
+  margin-left: 36px;
+}
+
+.result__info-cards-text {
+  margin: 24px 36px 36px 36px;
+}
+
+.result__media-wrapper {
+  margin-left: 90px;
+}
+
+.result__media-doctor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 440px;
+  height: 598px;
+  background-color: var(--color-gray-2);
+  border-radius: 24px;
+  clip-path: path('M439.706 23.984C439.706 10.738 428.968 0 415.722 0L130.4 0C117.154 0 106.416 10.738 106.416 23.984L106.416 84.0612C106.416 97.3071 95.6782 108.045 82.4323 108.045L23.984 108.045C10.738 108.045 0 118.783 0 132.029L0 574.016C0 587.262 10.738 598 23.984 598L415.722 598C428.968 598 439.706 587.262 439.706 574.016L439.706 23.984Z');
+}
+
+.result__media-doctor-img {
+  z-index: 100;
+  width: 342px;
+  height: 335px;
+  position: relative;
+  top: 79px;
+}
+
+.result__media-doctor-text {
+  z-index: 200;
+  width: 407px;
+  height: 232px;
+  top: auto;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  clip-path: path('M377 0C393.568 2.25496e-06 407 13.4307 407 29.999V201.999C407 218.568 393.569 232 377 232H30C13.4316 232 0.000263256 218.568 0 202V91.999C0 75.4305 13.4315 61.999 30 61.999H31.8779C48.4465 61.999 61.8779 48.5676 61.8779 31.999V30C61.8779 13.4315 75.3094 0 91.8779 0H377Z');
+}
+
+.result__media-doctor-text h3,
+.result__media-doctor-text p {
+  width: 227px;
+}
+
+.result__media-plan {
+  width: 440px;
+  height: 212px;
+  margin-top: 62px;
+  box-sizing: border-box;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 18px;
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+  border-radius: var(--border-radius-md);
+}
+
+.result__media-plan-title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.result__media-plan-text {
+  grid-column: 1;
+  grid-row: 2;
+  width: 129px;
+  height: 70px;
+   display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.result__media-button {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  width: 206px;
+  height: 70px;
+  color: var(--color-black);
+  background-color: var(--color-gray-2);
+  border-radius: var(--border-radius-sm);
 }
