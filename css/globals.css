@@ -48,6 +48,18 @@ label {
   /* transition-duration: var(--transition-duration); */
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 130%;
+}
+
 .container {
   overflow: hidden;
   width: 1280px;

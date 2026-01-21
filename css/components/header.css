@@ -36,7 +36,7 @@
   padding: 18px 24px 18px 24px;
   color: var(--color-black);
   border: 1px solid rgba(228, 228, 228, 1);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
   font-weight: 500;
   margin-left: 48px;
   transition: margin-left 0.3s ease;
@@ -139,3 +139,4 @@
   color: #fff;
   padding-left: 10px;
 }
+
