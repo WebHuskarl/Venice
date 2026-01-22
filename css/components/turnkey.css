@@ -3,7 +3,7 @@
   justify-content: center;
   padding-top: 90px;
   margin-bottom: 60px;
-  height: 980px;
+  height: 1000px;
 }
 
 .turnkey__top {
@@ -48,7 +48,13 @@
   margin-top: 32px;
 }
 
-.turnkey__implantation {
+.turnkey__bottom {
+  display: flex;
+  gap: 30px;
+}
+
+.turnkey__implantation, .turnkey__prosthetics {
+  position: relative;
   width: 700px;
   height: 650px;
   box-sizing: border-box;
@@ -58,15 +64,193 @@
   border: var(--border);
 }
 
-.turnkey__implantation-phase-number {
+.turnkey__prosthetics {
+  width: 550px;
+  background-color: var(--color-gray-2);
+}
+
+.turnkey__implantation-phase-number,
+.turnkey__prosthetics-phase-number {
   font-weight: 700;
   font-style: Bold;
   font-size: 21px;
   color: var(--color-blue-1);
 }
 
-.turnkey__implantation-title {
+.turnkey__implantation-title,
+.turnkey__prosthetics-title {
   width: 478px;
   font-weight: 700;
   font-size: 32px;
+  margin: 16px 0;
 }
+
+.turnkey__implantation-action {
+  width: 191px;
+  height: 27px;
+  padding: 4px 12px;
+  box-sizing: border-box;
+  font-weight: 700;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-blue-1);
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  bottom: auto;
+  left: auto;
+}
+
+.turnkey__implantation-descr,
+.turnkey__prosthetics-descr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.turnkey__implantation-cards {
+  display: flex;
+  gap: 16px;
+  margin: 36px 0 24px;
+}
+
+.turnkey__implantation-card,
+.turnkey__prosthetics-card {
+  width: 306px;
+  height: 164px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.turnkey__prosthetics-card {
+  width: 478px;
+  margin: 36px 0 24px;
+}
+
+.turnkey__implantation-card-number {
+  width: 132px;
+  color: var(--color-gray-9);
+}
+
+.turnkey__implantation-card-text {
+  width: 132px;
+  height: 38px;
+  margin: 12px 0 22px;
+}
+
+.turnkey__prosthetics-card-text {
+  margin: 16px 0 32px;
+  width: 218px;
+  height: 38px;
+}
+
+.turnkey__implantation-card-img {
+  width: 110px;
+  height: 75px;
+}
+
+.turnkey__prosthetics-card-img {
+  width: 110px;
+  height: 39px;
+  align-self: end;
+  margin-top: 16px;
+}
+
+.turnkey__implantation-card-price,
+.turnkey__prosthetics-card-price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.turnkey__implantation-card-price--strike {
+  text-decoration: line-through;
+  color: var(--color-gray-9);
+  margin-top: 18px;
+  align-self: end;
+}
+
+.turnkey__implantation-choice-payment,
+.turnkey__prosthetics-choice-payment {
+  height: 35px;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.turnkey__implantation-choice-payment span:nth-of-type(1),
+.turnkey__implantation-choice-payment span:nth-of-type(3),
+.turnkey__prosthetics-choice-payment span:nth-of-type(1),
+.turnkey__prosthetics-choice-payment span:nth-of-type(3) {
+  background-color: var(--color-gray-2);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+.turnkey__prosthetics-choice-payment span:nth-of-type(1),
+.turnkey__prosthetics-choice-payment span:nth-of-type(3) {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.turnkey__implantation-choice-payment span:nth-of-type(2),
+.turnkey__prosthetics-choice-payment span:nth-of-type(2) {
+  margin: 0 16px;
+}
+
+.turnkey__implantation-plus-list,
+.turnkey__prosthetics-plus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+}
+
+.turnkey__implantation-plus-item,
+.turnkey__prosthetics-plus-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 628px;
+  height: 32px;
+  position: relative;
+}
+
+.turnkey__prosthetics-plus-item {
+  width: 478px;
+}
+
+.turnkey__implantation-plus-item:nth-of-type(1):after,
+.turnkey__implantation-plus-item:nth-of-type(2):after,
+.turnkey__prosthetics-plus-item:nth-of-type(1):after,
+.turnkey__prosthetics-plus-item:nth-of-type(2):after {
+  position: absolute;
+  top: 48px;
+  content: "";
+  width: 628px;
+  height: 1px;
+  background-color: rgba(237, 237, 237, 1);
+}
+
+.turnkey__prosthetics-plus-item:nth-of-type(1):after,
+.turnkey__prosthetics-plus-item:nth-of-type(2):after {
+  width: 478px;
+  background-color: rgba(226, 226, 226, 1);
+}
+
+.turnkey__implantacion-plus-title,
+.turnkey__prosthetics-plus-title {
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+.turnkey__implantacion-plus-descr,
+.turnkey__prosthetics-plus-descr {
+  font-weight: 700;
+}
+

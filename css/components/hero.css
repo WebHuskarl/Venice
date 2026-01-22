@@ -188,7 +188,7 @@
 }
 
 .hero__info-price span {
-  color: rgba(139, 139, 139, 1);
+  color: var(--color-gray-8);
   font-size: 14px;
   font-weight: 500;
   line-height: 130%;

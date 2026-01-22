@@ -1,0 +1,9 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.000000" height="32.000000" fill="none" clip-path="url(#clipPath_0)" customFrame="url(#clipPath_0)">
+	<defs>
+		<clipPath id="clipPath_0">
+			<rect width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="16.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Vector-min.svg" width="32.000000" height="32.000000" x="0.000000" y="0.000000" rx="16.000000" fill="rgb(64,96,170)" />
+	<path id="Vector" d="M14.81 21L14.81 17.161L11 17.161L11 14.84L14.81 14.84L14.81 11L17.19 11L17.19 14.839L21 14.839L21 17.161L17.19 17.161L17.19 21L14.81 21Z" fill="rgb(255,255,255)" fill-rule="nonzero" />
+</svg>
