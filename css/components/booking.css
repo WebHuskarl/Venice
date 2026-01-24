@@ -1,0 +1,102 @@
+.booking {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+
+.booking__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking__title {
+  margin-bottom: 60px;
+}
+
+.booking__title-span {
+  color: var(--color-blue-1);
+}
+
+.booking__form {
+  width: 485px;
+  height: 379px;
+  background-color: var(--color-gray-1);
+  padding: 36px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking__form-label-tel {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 130%;
+  margin-bottom: 60px;
+}
+
+.booking__countdown {
+  width: 322px;
+  height: 275px;
+  background-color: var(--color-gray-2);
+  border-radius: var(--border-radius-md);
+  clip-path: var(--clip-top-right);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.booking__countdown-digits {
+  display: flex;
+  gap: 36px; 
+}
+
+.booking__countdown-digit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.booking__countdown-digit-number {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.booking__countdown-digit-label {
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.booking__contact {
+  width: 322px;
+  height: 270px;
+  background-color: var(--color-gray-1);
+  border-radius: var(--border-radius-md);
+  clip-path: var(--clip-top-right);
+  padding: 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 18px;
+}
+
+.booking__contact-text:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 95px;
+}
+
+.booking__contact-text:nth-of-type(2) {
+  line-height: 24px;
+}
+
+.booking__contact-phone {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-blue-1);
+}
