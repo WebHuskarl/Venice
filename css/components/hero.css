@@ -180,14 +180,14 @@
   border-radius: var(--border-radius-sm);
 }
 
-.hero__info-price p {
+.hero__info-price-actual {
   font-size: 40px;
   font-weight: 700;
   line-height: 100%;
   margin-bottom: 12px;
 }
 
-.hero__info-price span {
+.hero__info-price--strike {
   color: var(--color-gray-8);
   font-size: 14px;
   font-weight: 500;

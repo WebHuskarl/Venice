@@ -133,8 +133,8 @@
             </button>
 
             <div class="hero__info-price">
-              <p>110 000 ₽</p>
-              <span>180 000 ₽</span>
+              <p class="hero__info-price-actual">110 000 ₽</p>
+              <span class="hero__info-price--strike">180 000 ₽</span>
             </div>
 
             <div class="hero__info-picture">
@@ -345,7 +345,7 @@
           <form class="booking__form" action="#" >
             <label class="booking__form-label-tel" for="user-phone">Записаться</label>
             <input class="booking__form-input-tel"-input name="user-phone" type="tel">
-            <button class="booking__form-button" type="submit">Отправить</button>
+            <button class="booking__form-button" type="submit">получить рассчет</button>
             <input class="booking__form-input-agreement" type="checkbox"
             id="agreement"
             name="agreement"
@@ -510,6 +510,65 @@
       </div>
     </section>
 
+
+    <section class="consultation">
+      <div class="container consultation__container">
+
+        <div class="consultation__content">
+          <div class="consultation__content-text">
+            <h2 class="consultation__content-title">Запишитесь<br><span>на бесплатную</span>консультацию</h2>
+            <p class="consultation__content-descr">к ведущим врачам<br>по доступной цене</p>
+          </div>
+          <div class="consultation__content-media">
+            <form class="consultation__form" action="#">
+              <label class="consultation__form-label consultation-form__label--tel" for="user-phone">Записаться на бесплатную консультацию сейчас</label>
+  
+              <input class="consultation__form-input consultation-form__input--tel" 
+                     id="user-phone"
+                     name="user-phone" 
+                     type="tel"
+                     placeholder="+7-800-000-00-00">
+  
+              <button class="consultation__form-button" type="submit">Получить рассчет</button>
+  
+              <div class="consultation__form-agreement">
+               <input class="consultation__form-checkbox"
+                      type="checkbox"
+                      id="consultation-agreement"
+                      name="agreement"
+                      value="agreement">
+    
+                <label class="consultation__form-checkbox-label" for="consultation-agreement">
+                  Нажимая кнопку, вы соглашаетесь c 
+                  <a href="#">условиями политики конфиденциальности.</a>
+                </label>
+               </div>
+            </form>
+
+            <div class="consultation__content-media-doctor">
+              <div class="consultation__content-media-doctor-text">
+                <h3 class="consultation__content-media-doctor-title">Роман Громов</h3>
+                <p class="consultation__content-media-doctor-descr">Имплантолог,<br> кандидат наук</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="consultation__sales">
+          <div class="consultation__sale">
+            <h3 class="consultation__sale-title">КТ-диагностика</h3>
+            <p class="consultation__sale-price">0 ₽</p>
+            <span class="consultation__sale-price--strike">7000 ₽</span>
+          </div>
+          <div class="consultation__sale">
+            <h3 class="consultation__sale-title">План лечения</h3>
+            <p class="consultation__sale-price">0 ₽</p>
+            <span class="consultation__sale-price--strike">1000 ₽</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
 </body>
