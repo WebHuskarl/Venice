@@ -1,0 +1,61 @@
+.calc {
+  display: flex;
+  justify-content: center;
+  padding: 90px 0;
+}
+
+.calc__container {
+  display: flex;
+  gap: 60px;
+}
+
+.calc__sale {
+  width: 322px;
+  height: 194px;
+  border-radius: var(--border-radius-md);
+  padding: 36px 36px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calc__sale:nth-of-type(1) {
+  margin-bottom: 60px;
+  background-color: var(--color-gray-2);
+  clip-path: path('M292 0C308.568 3.54333e-06 322 13.4317 322 30V102.4C322 118.969 308.569 132.4 292 132.4H290C273.431 132.4 260 145.832 260 162.4V164.001C260 180.57 246.569 194.001 230 194.001H30C13.4316 194.001 0.000263305 180.569 0 164.001V30.001C0 13.4324 13.4315 0 30 0H292Z');
+}
+
+.calc__sale:nth-of-type(2) {
+  background-color: var(--color-blue-1);
+  color: var(--color-white);
+  clip-path: path('M230 0C246.569 0 260 13.4315 260 30V32C260 48.5685 273.431 62 290 62H292C308.569 62 322 75.4315 322 92V164C322 180.568 308.568 194.001 292 194.001H30C13.4316 194.001 0.000263306 180.569 0 164.001V30.001C0 13.4324 13.4315 0 30 0H230Z');
+}
+
+.calc__sale-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.calc__sale-price {
+  font-weight: 700;
+  font-size: 40px;
+
+}
+
+.calc__sale-price--strike {
+  text-decoration: line-through;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+
+}
+
+.calc__sale:nth-of-type(1) .calc__sale-price {
+  color: var(--color-blue-3);
+}
+
+.calc__sale:nth-of-type(1) .calc__sale-price--strike {
+  color: var(--color-gray-8);
+}
+
