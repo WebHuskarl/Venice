@@ -124,7 +124,7 @@
   gap: 18px;
   background-color: var(--color-white);
   border-radius: var(--border-radius-md);
-  clip-path: var(--clip-top-left);
+  clip-path: path('M377 0C393.568 2.25496e-06 407 13.4307 407 29.999V201.999C407 218.568 393.569 232 377 232H30C13.4316 232 0.000263256 218.568 0 202V91.999C0 75.4305 13.4315 61.999 30 61.999H31.8779C48.4465 61.999 61.8779 48.5676 61.8779 31.999V30C61.8779 13.4315 75.3094 0 91.8779 0H377Z');
 }
 
 .result__media-doctor-text h3,

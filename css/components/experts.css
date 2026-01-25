@@ -8,6 +8,7 @@
 .experts__top {
   display: flex;
   justify-content: space-between;
+  align-items: end;
 }
 
 .experts__top-title {
@@ -21,4 +22,166 @@
 .experts__top-descr {
   font-size: 20px;
   font-weight: 600;
+}
+
+.experts__top-successes {
+  width: 322px;
+  height: 270px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  clip-path: var(--clip-top-left);
+  padding: 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.experts__top-successes-title {
+  font-size: 20px;
+  line-height: 130%;
+  margin-bottom: 12px;
+}
+
+.experts__middle {
+  margin: 60px 0;
+}
+
+.experts__middle-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experts__middle-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 407px;
+  height: 86px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-sm);
+  backdrop-filter: var(--backdrop-filter);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.experts__bottom-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.experts__bottom-item {
+  width: 407px;
+  height: 520px;
+  background-color: var(--color-blue-2);
+  border-radius: 20px 20px 30px 30px;
+  position: relative;
+}
+
+.experts__bottom-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 30px 0;
+  color: var(--color-white);
+  z-index: 200;
+}
+
+.experts__bottom-top p {
+  padding: 4px 12px;
+  box-sizing: border-box;
+  background-color: var(--color-blue-1);
+  border-radius: 8px;
+}
+
+.experts__bottom-top p:nth-of-type(1) {
+  background: none ;
+  border: 1px solid var(--color-white);
+}
+
+.experts__bottom-img {
+  position: absolute;
+  top: 42px;
+  left: 68px;
+  right: 68px;
+  z-index: 100;
+  width: 271px;
+  height: 264px;
+}
+
+.experts__bottom-number {
+  z-index: 200;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--color-white);
+  position: absolute;
+  top: 266px;
+  left: 18px;
+}
+
+.experts__bottom-bottom-mask {
+  z-index: 200;
+  position: absolute;
+  top: 248px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 407px;
+  height: 273px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  clip-path: path('M377 0C393.569 2.25496e-06 407 13.4315 407 30V243C407 259.568 393.568 273 377 273H30C13.4315 273 0 259.568 0 242.999V91.999C0 75.4305 13.4315 61.999 30 61.999H31.8779C48.4465 61.999 61.8779 48.5676 61.8779 31.999V30C61.8779 13.4315 75.3094 0 91.8779 0H377Z');
+  display: flex;
+  justify-content: center;
+}
+
+.experts__bottom-bottom-content {
+  width: 227px;
+  height: 201px;
+}
+
+.experts__bottom-bottom-descr {
+  margin-top: 18px;
+  margin-bottom: 37px;
+}
+
+.experts__bottom-bottom-metrics {
+  display: flex;
+  gap: 12px;
+}
+
+.experts__bottom-bottom-metric {
+  width: 107.5px;
+  height: 61px;
+  background-color: var(--color-gray-1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 6px;
+}
+
+.experts__bottom-bottom-metric-count {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.experts__bottom-button {
+  width: 220px;
+  height: 74px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-sm);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
