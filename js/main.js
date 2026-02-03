@@ -1,25 +1,25 @@
-document.querySelectorAll('[data-burger-toggle]').forEach(burger => {
-  const nav = document.getElementById('header-nav');
-  
-  burger.addEventListener('click', () => {
-    const isActive = burger.classList.contains('active');
-    
-    burger.classList.toggle('active');
-    nav.classList.toggle('active');
-    burger.setAttribute('aria-expanded', !isActive);
+// Меню кнопка
+const burgerButton = document.querySelector('.burger-button');
+const nav = document.querySelector('.header__nav');
+const navLinks = document.querySelectorAll('.header__nav-link');
+
+// переключение меню
+burgerButton.addEventListener('click', () => {
+  burgerButton.classList.toggle('active');
+  nav.classList.toggle('active');
+  burgerButton.setAttribute('aria-expanded', burgerButton.classList.contains('active') ? 'true' : 'false');
+});
+
+// закрытие меню при клике по ссылке
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // закрываем меню
+    burgerButton.classList.remove('active');
+    nav.classList.remove('active');
+    burgerButton.setAttribute('aria-expanded', 'false');
   });
 });
 
-document.querySelectorAll('[data-nav-close]').forEach(link => {
-  link.addEventListener('click', () => {
-    const burger = document.querySelector('[data-burger-toggle]');
-    const nav = document.getElementById('header-nav');
-    
-    burger.classList.remove('active');
-    nav.classList.remove('active');
-    burger.setAttribute('aria-expanded', 'false');
-  });
-});
 
 
 //Hero включение/выключение видео
