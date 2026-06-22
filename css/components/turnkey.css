@@ -36,7 +36,7 @@
   clip-path: var(--clip-top-left);
 }
 
-.turnkey__contries-content {
+.turnkey__countries-content {
   width: 250px;
   height: 120px;
   margin: 0 36px 36px;
@@ -72,7 +72,6 @@
 .turnkey__implantation-phase-number,
 .turnkey__prosthetics-phase-number {
   font-weight: 700;
-  font-style: Bold;
   font-size: 21px;
   color: var(--color-blue-1);
 }
@@ -177,6 +176,8 @@
 
 .turnkey__implantation-choice-payment,
 .turnkey__prosthetics-choice-payment {
+  display: flex;
+  align-items: center;
   height: 35px;
   gap: 16px;
   margin-bottom: 36px;
@@ -243,13 +244,13 @@
   background-color: rgba(226, 226, 226, 1);
 }
 
-.turnkey__implantacion-plus-title,
+.turnkey__implantation-plus-title,
 .turnkey__prosthetics-plus-title {
   margin-right: auto;
   margin-left: 16px;
 }
 
-.turnkey__implantacion-plus-descr,
+.turnkey__implantation-plus-descr,
 .turnkey__prosthetics-plus-descr {
   font-weight: 700;
 }

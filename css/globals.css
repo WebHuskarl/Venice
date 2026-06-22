@@ -62,9 +62,12 @@ h3 {
 }
 
 .container {
-  overflow: hidden;
-  width: 1280px;
+  width: var(--container-width);
   box-sizing: border-box;
+}
+
+body.nav-active {
+  overflow: hidden;
 }
 
 /* 

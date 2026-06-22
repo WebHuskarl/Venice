@@ -30,6 +30,13 @@
   --backdrop-filter: blur(44px);
 
   --transition-duration: 0.2s;
+  --transition: 0.2s ease;
+
+  --container-width: 1280px;
+
+  --z-header: 100;
+  --z-menu:   200;
+  --z-modal:  300;
 }
 
 

@@ -10,9 +10,13 @@
   display: flex;
 }
 
-.result__info-title{
+.result__info-title {
   width: 750px;
   height: 240px;
+}
+
+.result__info-title-accent {
+  color: var(--color-blue-1);
 }
 
 .result__info-descr {
