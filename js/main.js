@@ -1,7 +1,19 @@
-import { initMenu }  from './menu.js';
-import { initVideo } from './video.js';
-import { initForms } from './validation.js';
+import { initMenu }    from './menu.js';
+import { initVideo }   from './video.js';
+import { initForms }   from './validation.js';
+import { initReviews } from './reviews.js';
+import { initCalc }    from './calc.js';
+import { initModals }  from './modal.js';
+import { initContacts } from './contacts.js';
+import { initTimer }   from './timer.js';
+import { initExperts } from './experts.js';
 
 initMenu();
 initVideo();
 initForms();
+initReviews();
+initCalc();
+initContacts();
+initModals();
+initTimer();
+initExperts();

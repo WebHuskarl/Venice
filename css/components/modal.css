@@ -1,0 +1,273 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(27, 27, 27, 0.7);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-container {
+  background: #fff;
+  border-radius: 16px;
+  position: relative;
+  width: 90%;
+  max-width: 760px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a0a0a0;
+  z-index: 10;
+  padding: 4px;
+}
+.modal-close:hover {
+  color: #000;
+}
+.modal-form {
+  display: flex;
+  flex-direction: row;
+}
+.modal-form__left {
+  flex: 1;
+  padding: 48px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-form__left--blue {
+  background: #EEF2FF;
+}
+.modal-form__right {
+  flex: 1;
+  padding: 48px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-form__title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.modal-form__subtitle {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 32px;
+}
+.modal-form__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.modal-form__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.modal-form__right-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.modal-form__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  font-size: 20px;
+  margin-bottom: 32px;
+  outline: none;
+}
+.modal-form__input::placeholder {
+  color: #e0e0e0;
+}
+.modal-form__input:focus {
+  border-bottom-color: #4B6EB1;
+}
+.modal-form__btn {
+  background: #4B6EB1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: opacity 0.3s;
+}
+.modal-form__btn:hover {
+  opacity: 0.9;
+}
+.modal-form__agreements {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modal-form__checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #666;
+  cursor: pointer;
+}
+.modal-form__checkbox-label a {
+  color: #4B6EB1;
+  text-decoration: underline;
+}
+.modal-form__checkbox {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  accent-color: #4B6EB1;
+}
+@media (max-width: 768px) {
+  .modal-form {
+    flex-direction: column;
+  }
+  .modal-form__left, .modal-form__right {
+    padding: 32px 24px;
+  }
+  .modal-container {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* For calc modal specifically */
+.calc-modal {
+  display: flex;
+  flex-direction: column;
+}
+.calc-modal__header {
+  padding: 24px 48px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+}
+.calc-modal__header p {
+  margin: 0;
+}
+.calc-modal__step {
+  font-weight: 600;
+  background: #f5f5f5;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .calc-modal__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 24px;
+  }
+}
+.modal-container--calc {
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+}
+.modal-container--calc .calc__quiz {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.modal-container--calc .calc__quiz-bg {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  z-index: -1;
+  background-image: 
+    linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff),
+    radial-gradient(circle at bottom left, #fff 24px, transparent 24.5px),
+    radial-gradient(circle at top right, transparent 24px, #fff 24.5px),
+    radial-gradient(circle at bottom left, #fff 24px, transparent 24.5px);
+  background-position: 
+    left 0 top 0,
+    right 180px top 24px,
+    right 0 top 84px,
+    right 24px top 60px,
+    right 180px top 0,
+    right 156px top 36px,
+    right 0 top 60px;
+  background-size: 
+    calc(100% - 204px) 100%,
+    24px calc(100% - 24px),
+    180px calc(100% - 84px),
+    156px 24px,
+    24px 24px,
+    24px 24px,
+    24px 24px;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  border-radius: 0;
+  pointer-events: none;
+}
+.modal-container--calc .calc__quiz-bg::after {
+  display: none !important;
+}
+.modal-container--calc .calc__quiz-tab::before,
+.modal-container--calc .calc__quiz-tab::after {
+  display: none !important;
+}
+.modal-container--calc .calc__quiz-tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 16px 0 16px;
+}
+.modal-container--calc .calc__quiz-header {
+  padding-right: 190px;
+}
+.modal-container--calc .modal-close {
+  display: none !important;
+}

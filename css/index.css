@@ -5,6 +5,7 @@
 
 @import 'components/header.css';
 @import 'components/hero.css';
+
 @import 'components/result.css';
 @import 'components/turnkey.css';
 @import 'components/booking.css';
@@ -12,4 +13,6 @@
 @import 'components/consultation.css';
 @import 'components/reviews.css';
 @import 'components/calc.css';
-
+@import 'components/contacts.css';
+@import 'components/footer.css';
+@import 'components/modal.css';

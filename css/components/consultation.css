@@ -73,9 +73,10 @@
   height: 395px;
   border-radius: var(--border-radius-sm);
   background-color: var(--color-gray-2);
-  background-image: url('../../images/consultation__content-media-doctor-img.png');
+  background-image: url('../../images/photos/expert_1.webp');
   background-repeat: no-repeat;
-  background-position: bottom; 
+  background-position: bottom center;
+  background-size: 100% auto;
   position: relative;
 }
 
@@ -140,22 +141,28 @@
 .consultation__form-input {
   width: 100%;
   height: 55px;
-  border: 1px solid var(--color-gray-3);
-  border-radius: var(--border-radius-sm);
-  padding: 0 20px;
+  border: none;
+  border-bottom: 1px solid #7d7d7d;
+  border-radius: 0;
+  padding: 0 10px;
   box-sizing: border-box;
-  font-size: 16px;
-  background-color: var(--color-white);
+  font-size: 20px;
+  background-color: transparent;
   outline: none;
   transition: border-color var(--transition);
+  margin-bottom: 32px;
+}
+
+.consultation__form-input::placeholder {
+  color: var(--color-gray-4);
 }
 
 .consultation__form-input:focus {
-  border-color: var(--color-blue-1);
+  border-bottom-color: var(--color-blue-1);
 }
 
 .consultation__form-input.is-invalid {
-  border-color: #e74c3c;
+  border-bottom-color: #e74c3c;
 }
 
 .consultation__form-button {
@@ -175,19 +182,47 @@
 }
 
 .consultation__form-checkbox {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--color-blue-1);
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
-  flex-shrink: 0;
-  margin-top: 2px;
+  height: 0;
+  width: 0;
 }
 
 .consultation__form-agreement {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   margin-top: auto;
+  cursor: pointer;
+  position: relative;
+}
+
+.consultation__form-checkbox-custom {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.consultation__form-checkbox:checked ~ .consultation__form-checkbox-custom::after {
+  content: '';
+  width: 5px;
+  height: 10px;
+  border: solid var(--color-blue-1);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.consultation__form-checkbox.is-invalid ~ .consultation__form-checkbox-custom {
+  border: 1px solid #e74c3c;
 }
 
 .consultation__form-checkbox-label {
@@ -197,8 +232,7 @@
 }
 
 .consultation__form-checkbox-label a {
-  color: var(--color-blue-1);
+  color: var(--color-gray-8);
   text-decoration: underline;
 }
-
 

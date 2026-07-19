@@ -29,6 +29,14 @@ a {
   color: inherit;
 }
 
+a, button {
+  transition: all 0.3s ease;
+}
+
+a:hover, button:hover {
+  opacity: 0.85;
+}
+
 ul {
   list-style: none;
 }
@@ -64,15 +72,16 @@ h3 {
 .container {
   width: var(--container-width);
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 body.nav-active {
   overflow: hidden;
 }
 
-/* 
 :focus-visible {
-  outline: 2px dashed var(--color-gray-1);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-blue-1);
+  outline-offset: 4px;
+  border-radius: 4px;
   transition-duration: 0s !important;
-} */
+}
