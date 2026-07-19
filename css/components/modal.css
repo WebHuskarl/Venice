@@ -1,14 +1,17 @@
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(27, 27, 27, 0.7);
+  inset: 0;
+  width: auto;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: 2rem;
+  background: rgba(20, 24, 32, 0.82);
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  overscroll-behavior: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -19,28 +22,43 @@
 }
 .modal-container {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 1.6rem;
   position: relative;
-  width: 90%;
-  max-width: 760px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  transform: translateY(20px);
+  width: min(76rem, calc(100% - 4rem));
+  max-height: calc(100dvh - 4rem);
+  max-width: 76rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 2rem 4rem rgba(0,0,0,0.15);
+  transform: translateY(2rem);
   transition: transform 0.3s ease;
+}
+
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body.modal-open {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
 }
 .modal-overlay.active .modal-container {
   transform: translateY(0);
 }
 .modal-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 1.6rem;
+  right: 1.6rem;
   background: none;
   border: none;
   cursor: pointer;
   color: #a0a0a0;
   z-index: 10;
-  padding: 4px;
+  padding: 0.4rem;
 }
 .modal-close:hover {
   color: #000;
@@ -51,7 +69,7 @@
 }
 .modal-form__left {
   flex: 1;
-  padding: 48px;
+  padding: 4.8rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -62,22 +80,22 @@
 }
 .modal-form__right {
   flex: 1;
-  padding: 48px;
+  padding: 4.8rem;
   background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .modal-form__title {
-  font-size: 28px;
+  font-size: 2.8rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
   line-height: 1.2;
 }
 .modal-form__subtitle {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #333;
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 .modal-form__list {
   list-style: none;
@@ -87,23 +105,23 @@
 .modal-form__list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 14px;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.4;
 }
 .modal-form__right-title {
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 .modal-form__input {
   width: 100%;
   border: none;
   border-bottom: 1px solid #ccc;
-  padding: 8px 0;
-  font-size: 20px;
-  margin-bottom: 32px;
+  padding: 0.8rem 0;
+  font-size: 2rem;
+  margin-bottom: 3.2rem;
   outline: none;
 }
 .modal-form__input::placeholder {
@@ -116,12 +134,12 @@
   background: #4B6EB1;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 16px;
-  font-size: 16px;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  font-size: 1.6rem;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
   transition: opacity 0.3s;
 }
 .modal-form__btn:hover {
@@ -130,13 +148,13 @@
 .modal-form__agreements {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.2rem;
 }
 .modal-form__checkbox-label {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 11px;
+  gap: 0.8rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   color: #666;
   cursor: pointer;
@@ -147,21 +165,153 @@
 }
 .modal-form__checkbox {
   margin-top: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
   accent-color: #4B6EB1;
 }
+@media (max-width: 1024px) {
+  .modal-container--calc .calc__quiz-header {
+    padding-right: 0;
+  }
+  .modal-container--calc .calc__quiz-tab {
+    position: static;
+    width: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding: 0 0 1.6rem;
+  }
+  .modal-container--calc .calc__quiz-bg {
+    background: #fff;
+    border-radius: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .modal-form {
     flex-direction: column;
   }
   .modal-form__left, .modal-form__right {
-    padding: 32px 24px;
+    padding: 3.2rem 2.4rem;
   }
   .modal-container {
-    max-height: 90vh;
+    max-height: calc(100dvh - 3.2rem);
     overflow-y: auto;
+    width: calc(100% - 3.2rem);
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 1.6rem;
+    align-items: center;
+  }
+
+  .modal-container,
+  .modal-container--calc {
+    width: 100%;
+    max-width: 44rem;
+    max-height: calc(100dvh - 3.2rem);
+    margin: 0;
+    border-radius: 1.6rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .modal-form {
+    padding: 1.2rem !important;
+  }
+
+  .modal-form__layout {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .modal-form__left,
+  .modal-form__right {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 2.4rem 2rem !important;
+  }
+
+  .modal-form__left {
+    padding-top: 4.8rem !important;
+  }
+
+  .modal-form__right {
+    border-radius: 1.6rem !important;
+  }
+
+  .modal-form__title {
+    font-size: 2.4rem;
+  }
+
+  .modal-form__right-title {
+    margin-bottom: 2rem !important;
+  }
+
+  .modal-form__input {
+    min-width: 0;
+    font-size: 1.8rem;
+  }
+
+  .modal-form-close {
+    top: 1.2rem !important;
+    right: 1.2rem !important;
+  }
+
+  .modal-container--calc .calc__quiz {
+    width: 100%;
+    min-width: 0;
+    padding: 2.4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 1.6rem;
+  }
+
+  .modal-container--calc .calc__quiz-tab {
+    display: flex;
+    position: static;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0 0 1.6rem;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .modal-container--calc .calc__quiz-step {
+    color: var(--color-blue-1) !important;
+  }
+
+  .modal-container--calc .calc-close {
+    color: var(--color-blue-1) !important;
+    border-color: rgba(75, 110, 177, 0.3) !important;
+    background: rgba(75, 110, 177, 0.08) !important;
+  }
+
+  .modal-container--calc .calc__quiz-header {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 0;
+  }
+
+  .modal-container--calc .calc__quiz-content,
+  .modal-container--calc .calc__quiz-options,
+  .modal-container--calc .calc__form-layout,
+  .modal-container--calc .calc__form-left,
+  .modal-container--calc .calc__form-right {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .modal-container--calc .calc__quiz-footer {
+    width: 100%;
   }
 }
 
@@ -171,12 +321,12 @@
   flex-direction: column;
 }
 .calc-modal__header {
-  padding: 24px 48px;
+  padding: 2.4rem 4.8rem;
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #333;
 }
 .calc-modal__header p {
@@ -185,15 +335,15 @@
 .calc-modal__step {
   font-weight: 600;
   background: #f5f5f5;
-  padding: 4px 12px;
-  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
 }
 @media (max-width: 768px) {
   .calc-modal__header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding: 24px;
+    gap: 1.2rem;
+    padding: 2.4rem;
   }
 }
 .modal-container--calc {
@@ -207,7 +357,7 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 .modal-container--calc .calc__quiz-bg {
   position: absolute;
@@ -221,25 +371,25 @@
     linear-gradient(#fff, #fff),
     linear-gradient(#fff, #fff),
     linear-gradient(#fff, #fff),
-    radial-gradient(circle at bottom left, #fff 24px, transparent 24.5px),
-    radial-gradient(circle at top right, transparent 24px, #fff 24.5px),
-    radial-gradient(circle at bottom left, #fff 24px, transparent 24.5px);
+    radial-gradient(circle at bottom left, #fff 2.4rem, transparent 2.45rem),
+    radial-gradient(circle at top right, transparent 2.4rem, #fff 2.45rem),
+    radial-gradient(circle at bottom left, #fff 2.4rem, transparent 2.45rem);
   background-position: 
     left 0 top 0,
-    right 180px top 24px,
-    right 0 top 84px,
-    right 24px top 60px,
-    right 180px top 0,
-    right 156px top 36px,
-    right 0 top 60px;
+    right 18rem top 2.4rem,
+    right 0 top 8.4rem,
+    right 2.4rem top 6rem,
+    right 18rem top 0,
+    right 15.6rem top 3.6rem,
+    right 0 top 6rem;
   background-size: 
-    calc(100% - 204px) 100%,
-    24px calc(100% - 24px),
-    180px calc(100% - 84px),
-    156px 24px,
-    24px 24px,
-    24px 24px,
-    24px 24px;
+    calc(100% - 20.4rem) 100%,
+    2.4rem calc(100% - 2.4rem),
+    18rem calc(100% - 8.4rem),
+    15.6rem 2.4rem,
+    2.4rem 2.4rem,
+    2.4rem 2.4rem,
+    2.4rem 2.4rem;
   background-repeat: no-repeat;
   box-shadow: none;
   border-radius: 0;
@@ -256,18 +406,68 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 180px;
-  height: 60px;
+  width: 18rem;
+  height: 6rem;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
-  padding: 0 16px 0 16px;
+  gap: 1.2rem;
+  padding: 0 1.6rem 0 1.6rem;
 }
 .modal-container--calc .calc__quiz-header {
-  padding-right: 190px;
+  padding-right: 19rem;
 }
 .modal-container--calc .modal-close {
   display: none !important;
+}
+
+/* Должно идти после базовых calc-правил, чтобы мобильная раскладка их перекрывала */
+@media (max-width: 600px) {
+  .modal-container--calc {
+    width: 100%;
+    max-width: 44rem;
+    max-height: calc(100dvh - 3.2rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .modal-container--calc .calc__quiz {
+    width: 100%;
+    min-width: 0;
+    padding: 2.4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 1.6rem;
+  }
+
+  .modal-container--calc .calc__quiz-bg {
+    background: var(--color-white);
+    border-radius: 1.6rem;
+  }
+
+  .modal-container--calc .calc__quiz-tab {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0 0 1.6rem;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .modal-container--calc .calc__quiz-step {
+    color: var(--color-blue-1) !important;
+  }
+
+  .modal-container--calc .calc-close {
+    color: var(--color-blue-1) !important;
+    border-color: rgba(75, 110, 177, 0.3) !important;
+    background: rgba(75, 110, 177, 0.08) !important;
+  }
+
+  .modal-container--calc .calc__quiz-header {
+    width: 100%;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
 }

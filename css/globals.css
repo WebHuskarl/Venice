@@ -1,28 +1,16 @@
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px — фиксировано, иначе clip-path path() разъезжается */
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-	min-width: 320px;
+  font-size: 1.6rem;
+	min-width: 360px;
   line-height: 120%;
  }
-/*  
-body {
-  font-weight: 400;
-  min-width: 320px;
-  color: var(--color-white);
-  background-color: light dark(#f1f1f1, #23272E);
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  min-height: 100vh;
-  padding: 100px 30px;
-  font-family: "Inter", sans-serif;
-  line-height: 1.7;
-} */
 
 a {
   text-decoration: none;
@@ -54,34 +42,216 @@ label {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  /* transition-duration: var(--transition-duration); */
 }
 
 h2 {
   font-weight: 700;
-  font-size: 60px;
+  font-size: 6rem;
   line-height: 100%;
 }
 
 h3 {
   font-weight: 700;
-  font-size: 25px;
+  font-size: 2.5rem;
   line-height: 130%;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
-  width: var(--container-width);
+  max-width: var(--container-width);
+  width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
+  /* Всегда боковые отступы — даже на ≥1280, чтобы ничего не липло к краю */
+  padding: 0 2.4rem;
+}
+
+@media (max-width: 1279px) {
+  .container {
+    padding: 0 4rem;
+  }
 }
 
 body.nav-active {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  touch-action: none;
+}
+
+html.nav-active {
   overflow: hidden;
 }
 
 :focus-visible {
   outline: 2px solid var(--color-blue-1);
-  outline-offset: 4px;
-  border-radius: 4px;
+  outline-offset: 0.4rem;
+  border-radius: 0.4rem;
   transition-duration: 0s !important;
+}
+
+/* ── Responsive typography & gutters ── */
+@media (max-width: 1279px) {
+  h2 { font-size: 4.8rem; }
+  h3 { font-size: 2.3rem; }
+}
+
+@media (max-width: 1024px) {
+  h2 { font-size: 4rem; }
+  h3 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 3.4rem; }
+  .container { padding: 0 2.4rem; }
+}
+
+@media (max-width: 480px) {
+  h2 { font-size: 2.8rem; }
+  h3 { font-size: 2rem; }
+  .container { padding: 0 1.6rem; }
+  body { font-size: 1.5rem; }
+}
+
+/* ≤1279 — центрирование секций (планшеты + мобилки) */
+@media (max-width: 1279px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  main [class*="__container"],
+  main [class*="__wrapper"],
+  main [class*="__content"],
+  main [class*="__top"],
+  main [class*="__bottom"],
+  main [class*="__media"],
+  main [class*="__info"],
+  main [class*="__form-layout"] {
+    align-items: center !important;
+  }
+
+  main [class*="__list"],
+  main ul {
+    justify-content: center;
+    align-items: center;
+  }
+
+  main [class*="__item"],
+  main [class*="__card"],
+  main [class*="__sale"],
+  main [class*="__form"],
+  main [class*="__countdown"],
+  main [class*="__contact"],
+  main [class*="__badge"],
+  main [class*="__quiz"],
+  main [class*="__doctor"],
+  main [class*="__plan"],
+  main [class*="__successes"],
+  main [class*="__countries"],
+  main [class*="__implantation"],
+  main [class*="__prosthetics"] {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer__container {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .footer__col--right {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  main [class*="__agreement"],
+  main [class*="agreement-wrapper"] {
+    justify-content: center;
+    text-align: left;
+  }
+
+  main [class*="__action-item"],
+  main [class*="__plus-item"],
+  main .calc__quiz-option {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  main .calc__quiz-option,
+  main .calc__quiz-question,
+  main .calc__quiz-header {
+    text-align: left !important;
+  }
+
+  main .calc__quiz {
+    text-align: left;
+  }
+
+  /* только align-items для центрирования блоков, БЕЗ text-align — он каскадом ломает плашки */
+  .turnkey__top,
+  .turnkey__bottom,
+  .experts__top,
+  .result__container,
+  .result__info-wrapper,
+  .result__media-wrapper {
+    align-items: center !important;
+  }
+
+  /* Заголовки секций — только margin auto для центрирования блока, text-align в компонентах */
+  .turnkey__title,
+  .experts__top-title,
+  .result__info-title,
+  .result__info-descr {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Плашки/карточки и всё их содержимое — ВСЕГДА как на десктопе (слева) */
+@media (max-width: 1279px) {
+  main [class*="__card"],
+  main [class*="__card"] *,
+  main [class*="-item"],
+  main [class*="-item"] *,
+  main [class*="__sale"],
+  main [class*="__sale"] *,
+  main [class*="__countdown"],
+  main [class*="__countdown"] *,
+  main [class*="__contact"],
+  main [class*="__contact"] *,
+  main [class*="__badge"],
+  main [class*="__badge"] *,
+  main [class*="__successes"],
+  main [class*="__successes"] *,
+  main [class*="__countries-block"],
+  main [class*="__countries-block"] *,
+  main [class*="__implantation-card"],
+  main [class*="__implantation-card"] *,
+  main [class*="__prosthetics-card"],
+  main [class*="__prosthetics-card"] *,
+  main [class*="__middle-item"],
+  main [class*="__middle-item"] *,
+  main [class*="__plan"],
+  main [class*="__plan"] *,
+  main [class*="__info-cards"],
+  main [class*="__info-cards"] * {
+    text-align: left;
+  }
 }

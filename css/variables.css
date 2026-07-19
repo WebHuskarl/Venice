@@ -20,23 +20,26 @@
 
   --border: 1px solid rgba(245, 245, 245, 1);
   
-  --border-radius-sm: 20px;
-  --border-radius-md: 30px;
-  --box-shadow: inset 0px 4px 22px 0px rgba(0, 0, 0, 0.25);
+  --border-radius-sm: 2rem;
+  --border-radius-md: 3rem;
+  --box-shadow: inset 0px 0.4rem 2.2rem 0px rgba(0, 0, 0, 0.25);
 
+  /* clip-path path() в координатах px — элементы должны быть ровно этих размеров */
+  --clip-w: 322px;
+  --clip-h-right: 275px;
+  --clip-h-left: 270px;
   --clip-top-right: path('M260.112 33.1475C260.112 49.716 273.544 63.1475 290.112 63.1475H292C308.569 63.1475 322 76.5789 322 93.1475V244.999C322 261.567 308.568 274.999 292 274.999H30C13.4315 274.999 0 261.568 0 244.999V30C0 13.4315 13.4315 3.26478e-07 30 0H230.112C246.681 0 260.112 13.4315 260.112 30V33.1475Z');
   --clip-top-left: path('M292 0C308.568 0.000123192 322 13.4316 322 30V240C322 256.568 308.568 270 292 270H30C13.4315 270 0 256.569 0 240V92C0 75.4315 13.4315 62 30 62H31.1123C47.6808 62 61.1123 48.5685 61.1123 32V30C61.1123 13.4315 74.5438 0 91.1123 0H292Z');
 
-  --backdrop-filter: blur(44px);
+  --backdrop-filter: blur(4.4rem);
 
   --transition-duration: 0.2s;
   --transition: 0.2s ease;
 
   --container-width: 1280px;
+  --card-gap: 30px;
 
   --z-header: 100;
   --z-menu:   200;
   --z-modal:  300;
 }
-
-

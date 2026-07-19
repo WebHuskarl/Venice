@@ -3,8 +3,8 @@ import { initCalc } from './calc.js';
 export function initModals() {
   if (!document.getElementById('global-modal')) {
     const modalHTML = `
-      <div class="modal-overlay" id="global-modal">
-        <div class="modal-container">
+      <div class="modal-overlay" id="global-modal" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-label="Форма заявки">
           <button class="modal-close" id="modal-close" type="button" aria-label="Закрыть">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
@@ -18,12 +18,17 @@ export function initModals() {
   const modal = document.getElementById('global-modal');
   const closeBtn = document.getElementById('modal-close');
   const content = document.getElementById('modal-content');
+  let modalScrollY = 0;
 
   function openModal(htmlContent, isCalc = false) {
     content.innerHTML = htmlContent;
     delete content.dataset.success;
+    modalScrollY = window.scrollY;
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    modal.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
+    document.body.style.top = `-${modalScrollY}px`;
     
     if (isCalc) {
       document.querySelector('.modal-container').classList.add('modal-container--calc');
@@ -42,7 +47,11 @@ export function initModals() {
 
   function closeModal() {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, modalScrollY);
   }
 
   function initCallFormValidation(container) {
@@ -128,7 +137,7 @@ export function initModals() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
 
-      <div style="display: flex; flex-direction: row; width: 100%; max-width: 900px; margin: 0 auto;">
+      <div class="modal-form__layout" style="display: flex; flex-direction: row; width: 100%; max-width: 900px; margin: 0 auto;">
         <div class="modal-form__left" style="background: transparent;">
           <h3 class="modal-form__title" style="margin-bottom: 16px;">Оставьте номер<br>телефона</h3>
           <p class="modal-form__subtitle" style="margin-bottom: 32px;">Перезвоним в ближайшее время</p>
@@ -179,7 +188,7 @@ export function initModals() {
     </div>
   `;
 
-  document.querySelectorAll('.header__call-button, .footer__btn').forEach(btn => {
+  document.querySelectorAll('.header__call-button, .footer__btn, .header__nav-call').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       openModal(callHtml, false);

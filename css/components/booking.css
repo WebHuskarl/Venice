@@ -1,27 +1,29 @@
 .booking {
   display: flex;
   justify-content: center;
-  margin-bottom: 90px;
+  margin-bottom: 9rem;
 }
 
 .booking__content {
   display: flex;
   justify-content: space-between;
+  gap: var(--card-gap);
 }
 
 .booking__title {
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .booking__title-span {
   color: var(--color-blue-1);
+  white-space: nowrap;
 }
 
 .booking__form {
-  width: 485px;
-  height: 379px;
+  width: 48.5rem;
+  height: 37.9rem;
   background-color: var(--color-gray-1);
-  padding: 36px;
+  padding: 3.6rem;
   box-sizing: border-box;
   border-radius: var(--border-radius-sm);
   display: flex;
@@ -30,14 +32,14 @@
 
 .booking__form-label-tel {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 130%;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .booking__countdown {
-  width: 322px;
-  height: 275px;
+  width: var(--clip-w);
+  height: var(--clip-h-right);
   background-color: var(--color-gray-2);
   border-radius: var(--border-radius-md);
   clip-path: var(--clip-top-right);
@@ -46,23 +48,24 @@
   justify-content: space-between;
   padding: 36px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .booking__countdown-digits {
   display: flex;
-  gap: 36px; 
+  gap: 3.6rem; 
 }
 
 .booking__countdown-digit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 2.4rem;
 }
 
 .booking__countdown-digit-number {
   font-weight: 700;
-  font-size: 48px;
+  font-size: 4.8rem;
 }
 
 .booking__countdown-digit-label {
@@ -72,8 +75,8 @@
 }
 
 .booking__contact {
-  width: 322px;
-  height: 270px;
+  width: var(--clip-w);
+  height: var(--clip-h-right);
   background-color: var(--color-gray-1);
   border-radius: var(--border-radius-md);
   clip-path: var(--clip-top-right);
@@ -83,37 +86,38 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 18px;
+  flex-shrink: 0;
 }
 
 .booking__contact-text:nth-of-type(1) {
   font-weight: 700;
-  font-size: 20px;
-  margin-top: 95px;
+  font-size: 2rem;
+  margin-top: 9.5rem;
 }
 
 .booking__contact-text:nth-of-type(2) {
-  line-height: 24px;
+  line-height: 2.4rem;
 }
 
 .booking__contact-phone {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: var(--color-blue-1);
 }
 
 .booking__form-input-tel {
   width: 100%;
-  height: 55px;
+  height: 5.5rem;
   border: none;
   border-bottom: 1px solid #7d7d7d;
   border-radius: 0;
-  padding: 0 10px;
+  padding: 0 1rem;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 2rem;
   background-color: transparent;
   outline: none;
   transition: border-color var(--transition);
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 
 .booking__form-input-tel::placeholder {
@@ -130,14 +134,16 @@
 
 .booking__form-button {
   width: 100%;
-  height: 55px;
+  height: 5.5rem;
   background-color: var(--color-blue-1);
   color: var(--color-white);
   border-radius: var(--border-radius-sm);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   cursor: pointer;
   transition: opacity var(--transition);
+  margin-bottom: 2.4rem;
+  flex-shrink: 0;
 }
 
 .booking__form-button:hover {
@@ -155,29 +161,31 @@
 .booking__form-agreement-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1.2rem;
   margin-top: auto;
+  padding-top: 0.8rem;
   cursor: pointer;
   position: relative;
+  flex-shrink: 0;
 }
 
 .booking__form-checkbox-custom {
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background-color: var(--color-white);
-  border-radius: 6px;
+  border-radius: 0.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 0.8rem rgba(0,0,0,0.05);
 }
 
 .booking__form-input-agreement:checked ~ .booking__form-checkbox-custom::after {
   content: '';
-  width: 5px;
-  height: 10px;
+  width: 0.5rem;
+  height: 1rem;
   border: solid var(--color-blue-1);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -189,7 +197,7 @@
 }
 
 .booking__form-label-agreement {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: var(--color-gray-8);
   line-height: 140%;
 }
@@ -197,4 +205,79 @@
 .booking__form-label-agreement a {
   color: var(--color-gray-8);
   text-decoration: underline;
+}
+
+.booking__countdown-title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 130%;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1279px) {
+  .booking { margin-bottom: 6rem; }
+  .booking__content {
+    flex-direction: column;
+    gap: 3.2rem;
+    align-items: center;
+  }
+  .booking__form {
+    width: 100%;
+    max-width: 48.5rem;
+    height: auto;
+    min-height: 0;
+    gap: 0;
+    padding-bottom: 3.6rem;
+  }
+  .booking__form-button {
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .booking__form-agreement-wrapper {
+    margin-top: 0;
+  }
+  .booking__countdown {
+    width: 100%;
+    max-width: 48.5rem;
+    height: auto;
+    clip-path: none;
+    border-radius: 2rem;
+    justify-content: flex-start;
+    gap: 3.2rem;
+  }
+  .booking__countdown-digits {
+    gap: 2.4rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .booking__contact {
+    width: 100%;
+    max-width: 48.5rem;
+    height: auto;
+    clip-path: none;
+    border-radius: 2rem;
+    justify-content: flex-start;
+    gap: 1.8rem;
+  }
+  .booking__contact-text:nth-of-type(1) { margin-top: 0; }
+  .booking__title { margin-bottom: 3.2rem; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .booking { margin-bottom: 4rem; }
+  .booking__title { margin-bottom: 2.4rem; font-size: 3.2rem; text-align: center; }
+  .booking__form { padding: 2.4rem; }
+  .booking__form-label-tel { font-size: 2.4rem; margin-bottom: 3rem; text-align: center; }
+  .booking__countdown { padding: 2.4rem; gap: 2.4rem; }
+  .booking__countdown-digits { gap: 1.6rem; justify-content: space-between; }
+  .booking__countdown-digit-number { font-size: 3.6rem; }
+  .booking__contact { padding: 2.4rem; }
+  .booking__contact-phone { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .booking__title { font-size: 2.8rem; }
+  .booking__countdown-digit-number { font-size: 2.8rem; }
+  .booking__countdown-digit-label { font-size: 1.1rem; }
 }

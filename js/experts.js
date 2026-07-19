@@ -15,7 +15,7 @@ export function initExperts() {
         item.style.animation = '';
       });
       expertsList.dataset.expanded = 'false';
-      showMoreBtn.innerHTML = '<img class="experts__bottom-button-img" src="images/experts__bottom-button.svg" alt="">Показать больше';
+      showMoreBtn.innerHTML = '<img class="experts__bottom-button-img" src="images/icons/experts__bottom-button.svg" alt="">Показать больше';
     } else {
       // Show items
       hiddenItems.forEach(item => {
@@ -23,7 +23,7 @@ export function initExperts() {
         item.style.animation = 'fadeIn 0.5s ease forwards';
       });
       expertsList.dataset.expanded = 'true';
-      showMoreBtn.innerHTML = '<img class="experts__bottom-button-img" src="images/experts__bottom-button.svg" alt="" style="transform: rotate(180deg)">Скрыть';
+      showMoreBtn.innerHTML = '<img class="experts__bottom-button-img" src="images/icons/experts__bottom-button.svg" alt="" style="transform: rotate(180deg)">Скрыть';
       
       if (!document.getElementById('experts-anim')) {
         const style = document.createElement('style');

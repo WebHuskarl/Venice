@@ -1,18 +1,18 @@
 .consultation {
   display: flex;
   justify-content: center;
-  padding: 90px 0;
+  padding: 9rem 0;
   box-sizing: border-box;
 }
 
 .consultation__container {
   display: flex;
-  gap: 60px;
+  gap: 6rem;
 }
 
 .consultation__content {
-  width: 898px;
-  height: 781px;
+  width: 89.8rem;
+  height: 78.1rem;
   display: flex;
   flex-direction: column;
 
@@ -22,22 +22,22 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  gap: 30px;
-  margin-bottom: 60px;
+  gap: 3rem;
+  margin-bottom: 6rem;
   text-align: right;
-  width: 640px;
-  height: 258px;
+  width: 64rem;
+  height: 25.8rem;
 }
 
 .consultation__content-descr {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .consultation__content-title {
   display: flex;
   flex-direction: column;
-  height: 180px;
+  height: 18rem;
 }
 
 .consultation__content-title span {
@@ -47,15 +47,15 @@
 
 .consultation__content-media {
   display: flex;
-  gap: 60px;
+  gap: 6rem;
 }
 
 .consultation__form {
-  width: 485px;
-  height: 463px;
+  width: 48.5rem;
+  height: 46.3rem;
   background-color: var(--color-gray-1);
   border-radius: var(--border-radius-sm);
-  padding: 36px;
+  padding: 3.6rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -63,14 +63,14 @@
 
 .consultation__form-label {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 130%;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .consultation__content-media-doctor {
-  width: 353px;
-  height: 395px;
+  width: 35.3rem;
+  height: 39.5rem;
   border-radius: var(--border-radius-sm);
   background-color: var(--color-gray-2);
   background-image: url('../../images/photos/expert_1.webp');
@@ -95,6 +95,7 @@
   position: absolute;
   top: 275px;
   left: 56px;
+  flex-shrink: 0;
 }
 
 .consultation__sale {
@@ -107,11 +108,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  flex-shrink: 0;
 }
 
 .consultation__sale:nth-of-type(1) {
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
   clip-path: path('M292 0C308.568 3.54333e-06 322 13.4317 322 30V102.4C322 118.969 308.569 132.4 292 132.4H290C273.431 132.4 260 145.832 260 162.4V164.001C260 180.57 246.569 194.001 230 194.001H30C13.4316 194.001 0.000263305 180.569 0 164.001V30.001C0 13.4324 13.4315 0 30 0H292Z');
 }
 
@@ -121,36 +122,36 @@
 
 .consultation__sale-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .consultation__sale-price {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 4rem;
   color: var(--color-blue-3);
 }
 
 .consultation__sale-price--strike {
   text-decoration: line-through;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 130%;
   color: var(--color-gray-8);
 }
 
 .consultation__form-input {
   width: 100%;
-  height: 55px;
+  height: 5.5rem;
   border: none;
   border-bottom: 1px solid #7d7d7d;
   border-radius: 0;
-  padding: 0 10px;
+  padding: 0 1rem;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 2rem;
   background-color: transparent;
   outline: none;
   transition: border-color var(--transition);
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 
 .consultation__form-input::placeholder {
@@ -167,14 +168,16 @@
 
 .consultation__form-button {
   width: 100%;
-  height: 55px;
+  height: 5.5rem;
   background-color: var(--color-blue-1);
   color: var(--color-white);
   border-radius: var(--border-radius-sm);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   cursor: pointer;
   transition: opacity var(--transition);
+  margin-bottom: 2.4rem;
+  flex-shrink: 0;
 }
 
 .consultation__form-button:hover {
@@ -192,29 +195,31 @@
 .consultation__form-agreement {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1.2rem;
   margin-top: auto;
+  padding-top: 0.8rem;
   cursor: pointer;
   position: relative;
+  flex-shrink: 0;
 }
 
 .consultation__form-checkbox-custom {
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background-color: var(--color-white);
-  border-radius: 6px;
+  border-radius: 0.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 0.8rem rgba(0,0,0,0.05);
 }
 
 .consultation__form-checkbox:checked ~ .consultation__form-checkbox-custom::after {
   content: '';
-  width: 5px;
-  height: 10px;
+  width: 0.5rem;
+  height: 1rem;
   border: solid var(--color-blue-1);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -226,7 +231,7 @@
 }
 
 .consultation__form-checkbox-label {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: var(--color-gray-8);
   line-height: 140%;
 }
@@ -236,3 +241,99 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1279px) {
+  .consultation { padding: 6rem 0; }
+  .consultation__container {
+    flex-direction: column;
+    gap: 3.2rem;
+    align-items: center;
+  }
+  .consultation__content {
+    width: 100%;
+    max-width: 56rem;
+    height: auto;
+  }
+  .consultation__content-text {
+    width: 100%;
+    height: auto;
+    align-self: stretch;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+  .consultation__content-title { height: auto; }
+  .consultation__content-media {
+    flex-direction: column;
+    gap: 2.4rem;
+    align-items: center;
+  }
+  .consultation__content-media-doctor {
+    width: 35.3rem;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .consultation__content-media-doctor-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% - 3.2rem);
+    height: auto;
+    min-height: 0;
+    clip-path: none;
+    border-radius: 2rem;
+    padding: 2.4rem;
+    margin: 0 auto 1.6rem;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .consultation__form {
+    width: 100%;
+    max-width: 48.5rem;
+    height: auto;
+    padding-bottom: 3.6rem;
+  }
+  .consultation__form-button {
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .consultation__form-agreement {
+    margin-top: 0;
+  }
+  .consultation__form-label { font-size: 2.4rem; margin-bottom: 3rem; }
+  .consultation__sales {
+    width: 100%;
+    max-width: 48.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+    margin: 0 auto;
+  }
+  .consultation__sale {
+    width: 100%;
+    height: auto;
+    clip-path: none !important;
+    border-radius: 2rem;
+  }
+  .consultation__sale:nth-of-type(1) { margin-bottom: 0; }
+}
+
+@media (max-width: 768px) {
+  .consultation { padding: 4rem 0; }
+  .consultation__content { max-width: 100%; }
+  .consultation__content-text { gap: 1.6rem; margin-bottom: 2.4rem; text-align: center; }
+  .consultation__content-descr { font-size: 1.6rem; }
+  .consultation__content-media-doctor { width: 100%; max-width: 35.3rem; }
+  .consultation__content-media-doctor-text {
+    padding: 2rem 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .consultation__sales { grid-template-columns: 1fr; gap: 1.2rem; max-width: 35.3rem; }
+  .consultation__form { padding: 2.4rem; padding-bottom: 2.4rem; }
+  .consultation__form-label { font-size: 2rem; margin-bottom: 2.4rem; }
+  .consultation__sale-price { font-size: 3.2rem; }
+}
