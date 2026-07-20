@@ -65,11 +65,13 @@ a {
 }
 
 a, button {
-  transition: all 0.3s ease;
-}
-
-a:hover, button:hover {
-  opacity: 0.85;
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    opacity var(--transition),
+    transform 0.28s var(--ease-out),
+    box-shadow 0.28s var(--ease-out);
 }
 
 ul {

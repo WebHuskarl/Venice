@@ -1,0 +1,766 @@
+/*
+  Интерактивность — группы эффектов (минимализм).
+  Работает только на устройствах с настоящим hover.
+*/
+
+@media (hover: hover) and (pointer: fine) {
+
+  /* ── 1. Primary CTA: лёгкий подъём + тень ── */
+  .hero__info-button,
+  .result__media-button,
+  .booking__form-button,
+  .consultation__form-button,
+  .calc__quiz-btn,
+  .calc__form-btn,
+  .modal-form__btn,
+  .footer__btn,
+  .contacts__btn,
+  .header__nav-call {
+    will-change: transform;
+  }
+
+  .hero__info-button:hover,
+  .result__media-button:hover,
+  .booking__form-button:hover,
+  .consultation__form-button:hover,
+  .calc__quiz-btn:hover,
+  .calc__form-btn:hover,
+  .modal-form__btn:hover,
+  .footer__btn:hover,
+  .contacts__btn:hover,
+  .header__nav-call:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--hover-shadow);
+    opacity: 1;
+  }
+
+  .hero__info-button:active,
+  .result__media-button:active,
+  .booking__form-button:active,
+  .consultation__form-button:active,
+  .calc__quiz-btn:active,
+  .calc__form-btn:active,
+  .modal-form__btn:active,
+  .footer__btn:active,
+  .contacts__btn:active,
+  .header__nav-call:active {
+    transform: translateY(0);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  /* ── 2. Ghost / outline: заливка контура ── */
+  .header__call-button,
+  .experts__bottom-button {
+    will-change: transform, background-color, border-color;
+  }
+
+  .header__call-button:hover {
+    transform: translateY(-0.15rem);
+    border-color: rgba(64, 96, 170, 0.45);
+    background-color: rgba(64, 96, 170, 0.06);
+    opacity: 1;
+  }
+
+  .experts__bottom-button:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--hover-shadow-sm);
+    opacity: 1;
+  }
+
+  .header__call-button:active,
+  .experts__bottom-button:active {
+    transform: translateY(0);
+  }
+
+  /* ── 3. Icon / circle controls: scale + фон ── */
+  .header__burger,
+  .reviews__nav-btn,
+  .contacts__gallery-btn,
+  .reviews__video-play,
+  .modal-close,
+  .calc-close {
+    transition:
+      transform 0.28s var(--ease-out),
+      background-color var(--transition),
+      border-color var(--transition),
+      color var(--transition),
+      opacity var(--transition);
+  }
+
+  .header__burger:hover,
+  .reviews__nav-btn:hover,
+  .contacts__gallery-btn:hover,
+  .reviews__video-play:hover {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+
+  .modal-close:hover,
+  .calc-close:hover {
+    transform: scale(1.08) rotate(90deg);
+    opacity: 1;
+  }
+
+  .header__burger:active,
+  .reviews__nav-btn:active,
+  .contacts__gallery-btn:active,
+  .reviews__video-play:active,
+  .modal-close:active,
+  .calc-close:active {
+    transform: scale(0.96);
+  }
+
+  /* ── 4. Text links: цвет + underline ── */
+  .header__nav-link,
+  .header__contacts-phone,
+  .header__nav-phone,
+  .booking__contact-phone,
+  .footer__link,
+  .booking__form-label-agreement a,
+  .consultation__form-checkbox-label a,
+  .calc__form-checkbox-label a,
+  .modal-form__checkbox-label a {
+    position: relative;
+    opacity: 1;
+  }
+
+  .header__nav-link:hover,
+  .header__contacts-phone:hover,
+  .header__nav-phone:hover,
+  .booking__contact-phone:hover {
+    color: var(--color-blue-1);
+  }
+
+  .footer__link:hover,
+  .booking__form-label-agreement a:hover,
+  .consultation__form-checkbox-label a:hover,
+  .calc__form-checkbox-label a:hover,
+  .modal-form__checkbox-label a:hover {
+    color: var(--color-blue-1);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .header__logo:hover,
+  .footer__logo:hover {
+    opacity: 0.72;
+    transform: none;
+  }
+
+  /* ── 5. Cards: мягкий lift (без ломки clip-path) ── */
+  .result__info-cards-item,
+  .turnkey__implantation-card,
+  .turnkey__prosthetics-card,
+  .experts__bottom-item,
+  .reviews__card,
+  .contacts__card,
+  .calc__sale,
+  .consultation__sale,
+  .hero__info-action,
+  .hero__info-price,
+  .booking__countdown,
+  .booking__contact,
+  .reviews__right-badge,
+  .experts__top-successes,
+  .turnkey__countries-block {
+    transition:
+      transform 0.35s var(--ease-out),
+      box-shadow 0.35s var(--ease-out),
+      filter 0.35s var(--ease-out);
+  }
+
+  .result__info-cards-item:hover,
+  .turnkey__implantation-card:hover,
+  .turnkey__prosthetics-card:hover,
+  .experts__bottom-item:hover,
+  .reviews__card:hover,
+  .contacts__card:hover,
+  .hero__info-action:hover,
+  .hero__info-price:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  /* Плашки с clip-path — drop-shadow + лёгкий brightness */
+  .calc__sale,
+  .consultation__sale,
+  .booking__countdown,
+  .booking__contact,
+  .reviews__right-badge,
+  .experts__top-successes,
+  .turnkey__countries-block,
+  .result__media-doctor,
+  .result__media-plan,
+  .consultation__content-media-doctor-text {
+    transition:
+      filter 0.4s var(--ease-out),
+      transform 0.01ms;
+  }
+
+  .calc__sale:hover,
+  .consultation__sale:hover,
+  .booking__countdown:hover,
+  .booking__contact:hover,
+  .reviews__right-badge:hover,
+  .experts__top-successes:hover,
+  .turnkey__countries-block:hover,
+  .result__media-plan:hover {
+    filter:
+      brightness(1.04)
+      drop-shadow(0 0.8rem 1.6rem rgba(64, 96, 170, 0.16));
+  }
+
+  .calc__sale-price,
+  .consultation__sale-price {
+    transition: transform 0.35s var(--ease-out), color var(--transition);
+    display: inline-block;
+  }
+
+  .calc__sale:hover .calc__sale-price,
+  .consultation__sale:hover .consultation__sale-price {
+    transform: scale(1.06);
+  }
+
+  .calc__sale-title,
+  .consultation__sale-title,
+  .experts__top-successes-title,
+  .reviews__badge-title {
+    transition: color var(--transition);
+  }
+
+  .experts__top-successes:hover .experts__top-successes-title,
+  .reviews__right-badge:hover .reviews__badge-title {
+    color: var(--color-blue-1);
+  }
+
+  /* ── Doctors (experts + result + consultation) ── */
+  .experts__bottom-item {
+    cursor: default;
+  }
+
+  .experts__bottom-item:hover {
+    transform: translateY(-0.55rem);
+    box-shadow: var(--hover-shadow);
+  }
+
+  .experts__bottom-item .experts__bottom-img {
+    transition: transform 0.55s var(--ease-out), filter 0.4s var(--ease-out);
+  }
+
+  .experts__bottom-item:hover .experts__bottom-img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+  }
+
+  .experts__bottom-bottom-mask {
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  .experts__bottom-item:hover .experts__bottom-bottom-mask {
+    transform: translateY(-0.6rem);
+  }
+
+  .experts__bottom-number {
+    transition: transform 0.35s var(--ease-out), color var(--transition);
+  }
+
+  .experts__bottom-item:hover .experts__bottom-number {
+    transform: scale(1.1);
+  }
+
+  .experts__bottom-bottom-title {
+    transition: color var(--transition);
+  }
+
+  .experts__bottom-item:hover .experts__bottom-bottom-title {
+    color: var(--color-blue-1);
+  }
+
+  /* Result doctor (clip-path) — анимируем детей */
+  .result__media-doctor {
+    cursor: default;
+  }
+
+  .result__media-doctor:hover {
+    filter:
+      brightness(1.03)
+      drop-shadow(0 1rem 2rem rgba(64, 96, 170, 0.18));
+  }
+
+  .result__media-doctor-img {
+    transition: transform 0.55s var(--ease-out);
+  }
+
+  .result__media-doctor:hover .result__media-doctor-img {
+    transform: scale(1.04);
+  }
+
+  .result__media-doctor-text {
+    transition: filter 0.4s var(--ease-out);
+  }
+
+  .result__media-doctor:hover .result__media-doctor-text {
+    filter: drop-shadow(0 0.6rem 1.2rem rgba(0, 0, 0, 0.08));
+  }
+
+  .result__media-doctor-text h3 {
+    transition: color var(--transition);
+  }
+
+  .result__media-doctor:hover .result__media-doctor-text h3 {
+    color: var(--color-blue-1);
+  }
+
+  /* Consultation doctor photo */
+  .consultation__content-media-doctor {
+    cursor: default;
+    transition:
+      transform 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out),
+      background-size 0.55s var(--ease-out);
+    background-size: 100% auto;
+  }
+
+  .consultation__content-media-doctor:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: var(--hover-shadow);
+    background-size: 106% auto;
+  }
+
+  .consultation__content-media-doctor-text {
+    transition: filter 0.4s var(--ease-out);
+  }
+
+  .consultation__content-media-doctor:hover .consultation__content-media-doctor-text {
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.1));
+  }
+
+  /* ── Contacts gallery ── */
+  .contacts__gallery-img {
+    transition:
+      transform 0.45s var(--ease-out),
+      filter 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out);
+  }
+
+  .contacts__gallery-img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  .contacts__gallery-btn {
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.06);
+  }
+
+  .contacts__gallery-btn:hover {
+    background-color: var(--color-blue-1);
+    color: var(--color-white);
+    transform: scale(1.08);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  .contacts__gallery-btn:hover svg {
+    transform: translateX(0);
+  }
+
+  .contacts__gallery-btn.prev:hover svg,
+  .contacts__gallery-btn.prev:hover img {
+    transform: translateX(-0.15rem);
+  }
+
+  .contacts__gallery-btn.next:hover svg,
+  .contacts__gallery-btn.next:hover img {
+    transform: translateX(0.15rem);
+  }
+
+  .contacts__gallery-btn svg,
+  .contacts__gallery-btn img {
+    transition: transform 0.28s var(--ease-out);
+  }
+
+  /* ── Hero action list bullets (доп.) ── */
+  .hero__info-action-list li img {
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .hero__info-action-list li:hover img {
+    transform: scale(1.12);
+  }
+
+  /* ── 6. Media: лёгкое осветление / zoom картинки ── */
+  .hero__video-mask {
+    transition: filter 0.4s var(--ease-out);
+  }
+
+  .hero__video-mask:hover {
+    filter: brightness(1.05);
+  }
+
+  .hero__video-preview-block {
+    transition:
+      transform 0.35s var(--ease-out),
+      box-shadow 0.35s var(--ease-out);
+  }
+
+  .hero__video-preview-block:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  .turnkey__implantation-card-img,
+  .turnkey__prosthetics-card-img,
+  .reviews__card-photo {
+    transition: transform 0.5s var(--ease-out), filter 0.4s var(--ease-out);
+  }
+
+  .turnkey__implantation-card:hover .turnkey__implantation-card-img,
+  .turnkey__prosthetics-card:hover .turnkey__prosthetics-card-img {
+    transform: scale(1.03);
+    filter: brightness(1.04);
+  }
+
+  /* clip-path фото — только brightness */
+  .reviews__card:hover .reviews__card-photo {
+    filter: brightness(1.04);
+  }
+
+  /* ── 7. Form fields: акцент бордера ── */
+  input[type="tel"],
+  input[type="text"],
+  input[type="email"],
+  .booking__form-input-tel,
+  .consultation__form-input,
+  .calc__form-input,
+  .modal-form__input {
+    transition:
+      border-color var(--transition),
+      box-shadow var(--transition),
+      background-color var(--transition);
+  }
+
+  input[type="tel"]:hover,
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  .booking__form-input-tel:hover,
+  .consultation__form-input:hover,
+  .calc__form-input:hover,
+  .modal-form__input:hover {
+    border-color: rgba(64, 96, 170, 0.45);
+  }
+
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  .booking__form-input-tel:focus,
+  .consultation__form-input:focus,
+  .calc__form-input:focus,
+  .modal-form__input:focus {
+    outline: none;
+    border-color: var(--color-blue-1);
+    box-shadow: 0 0 0 0.3rem rgba(64, 96, 170, 0.15);
+  }
+
+  /* ── 8. Quiz / checkbox labels: лёгкий фон ── */
+  .calc__quiz-label,
+  .calc__form-checkbox-label,
+  .modal-form__checkbox-label,
+  .consultation__form-checkbox-label {
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      transform 0.25s var(--ease-out);
+  }
+
+  .calc__quiz-label {
+    border-radius: 1.2rem;
+    cursor: pointer;
+  }
+
+  .calc__quiz-label:hover {
+    background-color: rgba(64, 96, 170, 0.06);
+    transform: translateX(0.3rem);
+  }
+
+  .calc__form-checkbox-label:hover,
+  .modal-form__checkbox-label:hover,
+  .consultation__form-checkbox-label:hover {
+    color: var(--color-blue-1);
+  }
+
+  /* ── 9. Pills / toggles: сдвиг + цвет ── */
+  .hero__video-item {
+    transition:
+      transform 0.3s var(--ease-out),
+      background-color var(--transition),
+      box-shadow 0.3s var(--ease-out);
+  }
+
+  .hero__video-item:hover {
+    transform: translateX(0.4rem);
+    background-color: var(--color-gray-2);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  .reviews__card-toggle,
+  .reviews__video-toggle {
+    transition:
+      color var(--transition),
+      opacity var(--transition),
+      transform 0.25s var(--ease-out);
+  }
+
+  .reviews__card-toggle:hover,
+  .reviews__video-toggle:hover {
+    color: var(--color-blue-1);
+    transform: translateX(0.2rem);
+    opacity: 1;
+  }
+
+  .reviews__toggle-icon {
+    transition: transform 0.28s var(--ease-out);
+    display: inline-block;
+  }
+
+  .reviews__card-toggle:hover .reviews__toggle-icon,
+  .reviews__video-toggle:hover .reviews__toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  /* ── 10. Payment chips: «поэтапная / рассрочка» ── */
+  .turnkey__implantation-choice-payment span:nth-of-type(1),
+  .turnkey__implantation-choice-payment span:nth-of-type(3),
+  .turnkey__prosthetics-choice-payment span:nth-of-type(1),
+  .turnkey__prosthetics-choice-payment span:nth-of-type(3) {
+    cursor: default;
+    transition:
+      transform 0.28s var(--ease-out),
+      background-color var(--transition),
+      color var(--transition),
+      box-shadow 0.28s var(--ease-out);
+  }
+
+  .turnkey__implantation-choice-payment span:nth-of-type(1):hover,
+  .turnkey__implantation-choice-payment span:nth-of-type(3):hover {
+    transform: translateY(-0.2rem);
+    background-color: var(--color-blue-1);
+    color: var(--color-white);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  .turnkey__prosthetics-choice-payment span:nth-of-type(1):hover,
+  .turnkey__prosthetics-choice-payment span:nth-of-type(3):hover {
+    transform: translateY(-0.2rem);
+    background-color: var(--color-blue-1);
+    color: var(--color-white);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  /* ── 11. Plus-rows: строка + вращение «+» ── */
+  .turnkey__implantation-plus-item,
+  .turnkey__prosthetics-plus-item {
+    cursor: default;
+    border-radius: 1rem;
+    padding: 0.4rem 0.6rem;
+    margin: -0.4rem -0.6rem;
+    box-sizing: content-box;
+    transition:
+      background-color 0.3s var(--ease-out),
+      transform 0.3s var(--ease-out);
+  }
+
+  .turnkey__implantation-plus-icon,
+  .turnkey__prosthetics-plus-icon {
+    transition: transform 0.35s var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .turnkey__implantation-plus-descr,
+  .turnkey__prosthetics-plus-descr {
+    transition: color var(--transition);
+  }
+
+  .turnkey__implantation-plus-item:hover,
+  .turnkey__prosthetics-plus-item:hover {
+    background-color: rgba(64, 96, 170, 0.06);
+    transform: translateX(0.4rem);
+  }
+
+  .turnkey__implantation-plus-item:hover .turnkey__implantation-plus-icon,
+  .turnkey__prosthetics-plus-item:hover .turnkey__prosthetics-plus-icon {
+    transform: rotate(90deg) scale(1.08);
+  }
+
+  .turnkey__implantation-plus-item:hover .turnkey__implantation-plus-descr,
+  .turnkey__prosthetics-plus-item:hover .turnkey__prosthetics-plus-descr {
+    color: var(--color-blue-1);
+  }
+
+  /* ── 12. Big section panels: лёгкий outline glow ── */
+  .turnkey__implantation,
+  .turnkey__prosthetics {
+    transition:
+      box-shadow 0.4s var(--ease-out),
+      transform 0.4s var(--ease-out);
+  }
+
+  .turnkey__implantation:hover,
+  .turnkey__prosthetics:hover {
+    box-shadow: var(--hover-shadow-sm);
+    transform: translateY(-0.2rem);
+  }
+
+  /* ── 13. Promo badges / phase labels ── */
+  .turnkey__implantation-action,
+  .turnkey__implantation-phase-number,
+  .turnkey__prosthetics-phase-number,
+  .hero__info-action-title {
+    transition:
+      transform 0.3s var(--ease-out),
+      color var(--transition);
+  }
+
+  .turnkey__implantation-action:hover,
+  .turnkey__implantation-phase-number:hover,
+  .turnkey__prosthetics-phase-number:hover {
+    transform: scale(1.04);
+    color: var(--color-blue-1);
+  }
+
+  /* ── 14. Feature icons row (страны / middle) ── */
+  .turnkey__countries-icon,
+  .experts__middle-item {
+    transition: transform 0.35s var(--ease-out), filter 0.35s var(--ease-out);
+  }
+
+  .turnkey__countries-icon:hover,
+  .experts__middle-item:hover {
+    transform: translateY(-0.35rem) scale(1.05);
+    filter: brightness(1.05);
+  }
+
+  /* ── 15. Result card numbers: акцент цифры ── */
+  .result__info-cards-number {
+    transition:
+      color var(--transition),
+      transform 0.35s var(--ease-out);
+    display: inline-block;
+  }
+
+  .result__info-cards-item:hover .result__info-cards-number {
+    color: var(--color-blue-1);
+    transform: scale(1.08);
+  }
+
+  /* ── 16. Hero checklist items ── */
+  .hero__info-action-list li {
+    transition:
+      transform 0.28s var(--ease-out),
+      color var(--transition);
+  }
+
+  .hero__info-action-list li:hover {
+    transform: translateX(0.35rem);
+    color: var(--color-blue-1);
+  }
+
+  /* ── 17. Ratings / marquee pause already exists — лёгкий scale ── */
+  .reviews__ratings-item {
+    transition:
+      transform 0.35s var(--ease-out),
+      box-shadow 0.35s var(--ease-out);
+  }
+
+  .reviews__ratings-item:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: var(--hover-shadow-sm);
+  }
+
+  /* ── 18. Extra diversity: primary CTA shimmer-free press ── */
+  .hero__info-button:hover,
+  .booking__form-button:hover,
+  .consultation__form-button:hover {
+    filter: brightness(1.06);
+  }
+
+  .calc__quiz-btn:hover,
+  .calc__form-btn:hover,
+  .modal-form__btn:hover {
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Disabled / нет hover-устройства */
+button:disabled,
+button[disabled],
+.reviews__nav-btn:disabled {
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__info-button,
+  .result__media-button,
+  .booking__form-button,
+  .consultation__form-button,
+  .calc__quiz-btn,
+  .calc__form-btn,
+  .modal-form__btn,
+  .footer__btn,
+  .contacts__btn,
+  .header__nav-call,
+  .header__call-button,
+  .experts__bottom-button,
+  .header__burger,
+  .reviews__nav-btn,
+  .contacts__gallery-btn,
+  .reviews__video-play,
+  .modal-close,
+  .calc-close,
+  .result__info-cards-item,
+  .turnkey__implantation-card,
+  .turnkey__prosthetics-card,
+  .experts__bottom-item,
+  .reviews__card,
+  .contacts__card,
+  .hero__info-action,
+  .hero__info-price,
+  .hero__video-preview-block,
+  .hero__video-item,
+  .calc__quiz-label,
+  .reviews__card-toggle,
+  .reviews__video-toggle,
+  .reviews__toggle-icon,
+  .turnkey__implantation-choice-payment span,
+  .turnkey__prosthetics-choice-payment span,
+  .turnkey__implantation-plus-item,
+  .turnkey__prosthetics-plus-item,
+  .turnkey__implantation-plus-icon,
+  .turnkey__prosthetics-plus-icon,
+  .turnkey__implantation,
+  .turnkey__prosthetics,
+  .turnkey__countries-icon,
+  .experts__middle-item,
+  .result__info-cards-number,
+  .hero__info-action-list li,
+  .reviews__ratings-item,
+  .experts__bottom-img,
+  .experts__bottom-bottom-mask,
+  .experts__bottom-number,
+  .result__media-doctor,
+  .result__media-doctor-img,
+  .result__media-doctor-text,
+  .consultation__content-media-doctor,
+  .consultation__content-media-doctor-text,
+  .contacts__gallery-img,
+  .calc__sale,
+  .consultation__sale,
+  .reviews__right-badge,
+  .experts__top-successes {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

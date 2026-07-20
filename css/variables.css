@@ -35,6 +35,10 @@
 
   --transition-duration: 0.2s;
   --transition: 0.2s ease;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --hover-lift: -0.3rem;
+  --hover-shadow: 0 0.8rem 2.4rem rgba(64, 96, 170, 0.18);
+  --hover-shadow-sm: 0 0.4rem 1.2rem rgba(64, 96, 170, 0.12);
 
   --container-width: 1280px;
   --card-gap: 30px;
