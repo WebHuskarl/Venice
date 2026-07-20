@@ -7,6 +7,7 @@ import { initModals }  from './modal.js';
 import { initContacts } from './contacts.js';
 import { initTimer }   from './timer.js';
 import { initExperts } from './experts.js';
+import { initReveal }  from './reveal.js';
 
 initMenu();
 initVideo();
@@ -17,3 +18,4 @@ initContacts();
 initModals();
 initTimer();
 initExperts();
+initReveal();

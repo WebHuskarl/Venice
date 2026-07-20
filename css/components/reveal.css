@@ -1,0 +1,71 @@
+/* ── Scroll Reveal ─────────────────────────────────
+   Переиспользуемые появления: data-reveal="up|down|left|right|scale|fade"
+   Задержка: --reveal-delay (ставит JS для stagger)
+─────────────────────────────────────────────────── */
+
+[data-reveal] {
+  --reveal-distance: 36px;
+  --reveal-duration: 0.75s;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-delay: 0ms;
+
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease) var(--reveal-delay),
+    transform var(--reveal-duration) var(--reveal-ease) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+[data-reveal="down"] {
+  transform: translate3d(0, calc(var(--reveal-distance) * -1), 0);
+}
+
+[data-reveal="left"] {
+  transform: translate3d(calc(var(--reveal-distance) * -1), 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(var(--reveal-distance), 0, 0);
+}
+
+[data-reveal="scale"] {
+  --reveal-distance: 0;
+  transform: translate3d(0, 20px, 0) scale(0.96);
+}
+
+[data-reveal="fade"] {
+  --reveal-distance: 0;
+  transform: none;
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal].is-done {
+  will-change: auto;
+}
+
+/* Заголовки — чуть мягче и выше */
+[data-reveal="title"] {
+  --reveal-distance: 28px;
+  --reveal-duration: 0.85s;
+}
+
+@media (max-width: 768px) {
+  [data-reveal] {
+    --reveal-distance: 24px;
+    --reveal-duration: 0.65s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

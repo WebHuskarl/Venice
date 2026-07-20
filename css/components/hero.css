@@ -105,6 +105,15 @@
   margin-left: auto;
 }
 
+@media (min-width: 1280px) {
+  .hero__video-wrapper,
+  .hero__info-wrapper {
+    width: 640px;
+    max-width: 640px;
+    flex: 0 0 640px;
+  }
+}
+
 .hero__info-title {
   width: 45.1rem;
   height: 24rem;
