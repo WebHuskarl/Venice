@@ -11,7 +11,10 @@
   <meta content="index, follow" name="robots" />
   <link href="index.html" rel="canonical" />
   <title>Венеция — клиника зубной имплантации</title>
-  <link href="css/index.css?v=64" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="css/index.css?v=66" rel="stylesheet" />
   <script>
     (function () {
       try { history.scrollRestoration = 'manual'; } catch (e) {}
@@ -22,10 +25,11 @@
       window.scrollTo(0, 0);
     })();
   </script>
-  <script src="js/main.js?v=61" type="module"></script>
+  <script src="js/main.js?v=66" type="module"></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
   <header class="header">
     <div class="container header__container">
       <a aria-label="Венеция — на главную" class="header__logo" href="index.html">
@@ -92,28 +96,29 @@
       <button class="header__nav-call" type="button">Перезвоните мне</button>
     </div>
   </nav>
-  <main class="main">
+  <main class="main" id="main">
     <section class="hero" id="hero">
       <div class="container hero__container">
         <div class="hero__mobile-photo" role="img" aria-label="Интерьер клиники Венеция"></div>
         <div class="hero__video-wrapper">
-          <div class="hero__video-mask" data-video-toggle="">
-            <video autoplay="" class="hero__video-media" loop="" muted="" playsinline="" preload="auto"
-              poster="images/photos/hero__video.webp" src="videos/hero__video.mp4">
+          <div class="hero__video-mask" data-video-toggle="" role="button" tabindex="0"
+            aria-label="Видео имплантации All-on-6. Нажмите, чтобы поставить на паузу или воспроизвести">
+            <video autoplay="" class="hero__video-media" loop="" muted="" playsinline="" preload="metadata"
+              poster="images/photos/hero__video.webp" src="videos/hero__video.mp4" aria-hidden="true">
             </video>
           </div>
           <div class="hero__video-preview-block">
-            <img alt="превью челюсть" class="hero__video-preview-img" src="images/photos/hero__video-preview.webp" />
+            <img aria-hidden="true" alt="" class="hero__video-preview-img" src="images/photos/hero__video-preview.webp" width="166" height="116" />
             <p class="hero__video-preview-text">All-on-6</p>
             <p class="hero__video-preview-text">имплантация</p>
           </div>
           <ul class="hero__video-list">
-            <li class="hero__video-item"><img alt="Hero  Video Item Icon"
-                src="images/icons/hero__video-item-icon.svg" />за 1 сеанс</li>
-            <li class="hero__video-item"><img alt="Hero  Video Item Icon"
-                src="images/icons/hero__video-item-icon.svg" />любая сложность</li>
-            <li class="hero__video-item"><img alt="Hero  Video Item Icon"
-                src="images/icons/hero__video-item-icon.svg" />центр Москвы</li>
+            <li class="hero__video-item"><img alt="" class="hero__video-item-icon" aria-hidden="true"
+                src="images/icons/hero__video-item-icon.svg" width="32" height="32" />за 1 сеанс</li>
+            <li class="hero__video-item"><img alt="" class="hero__video-item-icon" aria-hidden="true"
+                src="images/icons/hero__video-item-icon.svg" width="32" height="32" />любая сложность</li>
+            <li class="hero__video-item"><img alt="" class="hero__video-item-icon" aria-hidden="true"
+                src="images/icons/hero__video-item-icon.svg" width="32" height="32" />центр Москвы</li>
           </ul>
         </div>
         <div class="hero__info-wrapper">
@@ -127,11 +132,11 @@
               <h3 class="hero__info-action-title">Акция<br />до <span class="dynamic-promo-date">28 февраля</span></h3>
               <p class="hero__info-action-text">Запишитесь на бесплатную консультацию и получите подарок:</p>
               <ul class="hero__info-action-list">
-                <li class="hero__info-action-item"><img alt="Hero  Info Action Item Icon"
-                    src="images/icons/hero__info-action-item-icon.svg" />Консультация
+                <li class="hero__info-action-item"><img alt="" aria-hidden="true"
+                    src="images/icons/hero__info-action-item-icon.svg" width="20" height="20" />Консультация
                   ортопеда</li>
-                <li class="hero__info-action-item"><img alt="Hero  Info Action Item Icon"
-                    src="images/icons/hero__info-action-item-icon.svg" />КТ с
+                <li class="hero__info-action-item"><img alt="" aria-hidden="true"
+                    src="images/icons/hero__info-action-item-icon.svg" width="20" height="20" />КТ с
                   расшифровкой</li>
               </ul>
             </div>
@@ -185,7 +190,8 @@
         </div>
         <div class="result__media-wrapper">
           <div class="result__media-doctor">
-            <img alt="Expert 3" class="result__media-doctor-img" src="images/photos/expert_3.webp" />
+            <img alt="Смирнов Олег — главный врач, имплантолог" class="result__media-doctor-img" loading="lazy"
+              src="images/photos/expert_3.webp" width="342" height="335" />
             <div class="result__media-doctor-text">
               <h3>Смирнов Олег</h3>
               <p>Главный врач, имплантолог</p>
@@ -193,8 +199,8 @@
           </div>
           <div class="result__media-plan">
             <h3 class="result__media-plan-title">Получите персональный<br />план имплантации</h3>
-            <p class="result__media-plan-text"><img alt="Result  Media Plan Text Icon"
-                src="images/icons/result__media-plan-text-icon.svg" />за 1 визит</p>
+            <p class="result__media-plan-text"><img loading="lazy" decoding="async" alt="" aria-hidden="true"
+                src="images/icons/result__media-plan-text-icon.svg" width="20" height="20" />за 1 визит</p>
             <button class="result__media-button" type="button">
               Получить расчёт
             </button>
@@ -214,17 +220,17 @@
                 Израиля</p>
               <ul class="turnkey__countries-icons">
                 <li class="turnkey__countries-icon">
-                  <img alt="Корея" class="turnkey__countries-img" src="images/photos/turnkey__countries-korea.webp" />
+                  <img loading="lazy" decoding="async" alt="Корея" class="turnkey__countries-img" src="images/photos/turnkey__countries-korea.webp" />
                 </li>
                 <li class="turnkey__countries-icon">
-                  <img alt="Швейцария" class="turnkey__countries-img"
+                  <img loading="lazy" decoding="async" alt="Швейцария" class="turnkey__countries-img"
                     src="images/photos/turnkey__countries-switzerland.webp" />
                 </li>
                 <li class="turnkey__countries-icon">
-                  <img alt="США" class="turnkey__countries-img" src="images/photos/turnkey__countries-usa.webp" />
+                  <img loading="lazy" decoding="async" alt="США" class="turnkey__countries-img" src="images/photos/turnkey__countries-usa.webp" />
                 </li>
                 <li class="turnkey__countries-icon">
-                  <img alt="Израиль" class="turnkey__countries-img"
+                  <img loading="lazy" decoding="async" alt="Израиль" class="turnkey__countries-img"
                     src="images/photos/turnkey__countries-israel.webp" />
                 </li>
               </ul>
@@ -238,7 +244,7 @@
                 февраля</span></span>
             <h2 class="turnkey__implantation-title">Имплантация зубов</h2>
             <p class="turnkey__implantation-descr">Выбор метода зависит от вашего плана лечения
-              <img alt="Turnkey  Implantation Descr Img" class="turnkey__implantation-descr-img"
+              <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__implantation-descr-img"
                 src="images/photos/turnkey__implantation-descr-img.webp" />
             </p>
             <div class="turnkey__implantation-cards">
@@ -246,7 +252,7 @@
                 <span class="turnkey__implantation-card-number">Метод 1</span>
                 <p class="turnkey__implantation-card-text">Все зубы на 4-х имплантах</p>
                 <span class="turnkey__implantation-card-price">110 000 ₽</span>
-                <img alt="Turnkey  Implantation Card Img 1" class="turnkey__implantation-card-img"
+                <img loading="lazy" decoding="async" alt="Схема All-on-4" class="turnkey__implantation-card-img"
                   src="images/photos/turnkey__implantation-card-img-1.webp" />
                 <span class="turnkey__implantation-card-price--strike">180 000 ₽</span>
               </div>
@@ -254,7 +260,7 @@
                 <span class="turnkey__implantation-card-number">Метод 2</span>
                 <p class="turnkey__implantation-card-text">Все зубы на 6-х имплантах</p>
                 <span class="turnkey__implantation-card-price">170 000 ₽</span>
-                <img alt="Turnkey  Implantation Card Img 2" class="turnkey__implantation-card-img"
+                <img loading="lazy" decoding="async" alt="Схема All-on-6" class="turnkey__implantation-card-img"
                   src="images/photos/turnkey__implantation-card-img-2.webp" />
                 <span class="turnkey__implantation-card-price--strike">240 000 ₽</span>
               </div>
@@ -266,19 +272,19 @@
             </div>
             <ul class="turnkey__implantation-plus-list">
               <li class="turnkey__implantation-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__implantation-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__implantation-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__implantation-plus-title">Гарантия на все импланты</p>
                 <p class="turnkey__implantation-plus-descr">Пожизненно</p>
               </li>
               <li class="turnkey__implantation-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__implantation-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__implantation-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__implantation-plus-title">Гарантия на работу врача</p>
                 <p class="turnkey__implantation-plus-descr">Расширенная до 2-х лет</p>
               </li>
               <li class="turnkey__implantation-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__implantation-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__implantation-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__implantation-plus-title">Ежегодные профосмотры</p>
                 <p class="turnkey__implantation-plus-descr">Бесплатно</p>
@@ -289,13 +295,13 @@
             <span class="turnkey__prosthetics-phase-number">2 этап</span>
             <h2 class="turnkey__prosthetics-title">Имплантация зубов</h2>
             <p class="turnkey__prosthetics-descr">Проводится сразу в день операции
-              <img alt="Turnkey  Implantation Descr Img" class="turnkey__implantation-descr-img"
+              <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__implantation-descr-img"
                 src="images/photos/turnkey__implantation-descr-img.webp" />
             </p>
             <div class="turnkey__prosthetics-card">
               <p class="turnkey__prosthetics-card-text">Сверхпрочный несъёмный протез</p>
               <span class="turnkey__prosthetics-card-price">60 000 ₽</span>
-              <img alt="Turnkey  Prosthetics Card Img" class="turnkey__prosthetics-card-img"
+              <img loading="lazy" decoding="async" alt="Несъёмный протез" class="turnkey__prosthetics-card-img"
                 src="images/photos/turnkey__prosthetics-card-img.webp" />
             </div>
             <div class="turnkey__prosthetics-choice-payment">
@@ -305,19 +311,19 @@
             </div>
             <ul class="turnkey__prosthetics-plus-list">
               <li class="turnkey__prosthetics-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__prosthetics-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__prosthetics-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__prosthetics-plus-title">Моделирование улыбки</p>
                 <p class="turnkey__prosthetics-plus-descr">Бесплатно</p>
               </li>
               <li class="turnkey__prosthetics-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__prosthetics-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__prosthetics-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__prosthetics-plus-title">Укрепление титановой балкой</p>
                 <p class="turnkey__prosthetics-plus-descr">Бесплатно</p>
               </li>
               <li class="turnkey__prosthetics-plus-item">
-                <img alt="Turnkey  Implantacion Plus Icon" class="turnkey__prosthetics-plus-icon"
+                <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="turnkey__prosthetics-plus-icon"
                   src="images/icons/turnkey__implantacion-plus-icon.svg" />
                 <p class="turnkey__prosthetics-plus-title">Увеличенный срок использования</p>
                 <p class="turnkey__prosthetics-plus-descr">Бесплатно</p>
@@ -388,13 +394,13 @@
         </div>
         <div class="experts__middle">
           <ul class="experts__middle-list">
-            <li class="experts__middle-item"><img alt="Experts  Midle Item Img" class="experts__middle-item-img"
+            <li class="experts__middle-item"><img aria-hidden="true" loading="lazy" decoding="async" alt="" class="experts__middle-item-img"
                 src="images/icons/experts__midle-item-img.svg" />
               Официально Сертифицированные мастера Nobel</li>
-            <li class="experts__middle-item"><img alt="Experts  Midle Item Img" class="experts__middle-item-img"
+            <li class="experts__middle-item"><img aria-hidden="true" loading="lazy" decoding="async" alt="" class="experts__middle-item-img"
                 src="images/icons/experts__midle-item-img.svg" />
               Имеют опыт работы в ведущих клиниках мира</li>
-            <li class="experts__middle-item"><img alt="Experts  Midle Item Img" class="experts__middle-item-img"
+            <li class="experts__middle-item"><img aria-hidden="true" loading="lazy" decoding="async" alt="" class="experts__middle-item-img"
                 src="images/icons/experts__midle-item-img.svg" />
               Участники всемирной ассоциации имплантологов</li>
           </ul>
@@ -406,7 +412,7 @@
                 <p>Стаж: 14 лет</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 1" class="experts__bottom-img" src="images/photos/expert_1.webp" />
+              <img loading="lazy" decoding="async" alt="Иван Юдин — челюстно-лицевой хирург" class="experts__bottom-img" src="images/photos/expert_1.webp" />
               <span class="experts__bottom-number">01</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -433,7 +439,7 @@
                 <p>Стаж: 9 лет</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 2" class="experts__bottom-img" src="images/photos/expert_2.webp" />
+              <img loading="lazy" decoding="async" alt="Иванова Анна — врач-стоматолог, ортопед" class="experts__bottom-img" src="images/photos/expert_2.webp" />
               <span class="experts__bottom-number">02</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -460,7 +466,7 @@
                 <p>Стаж: 21 год</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 3" class="experts__bottom-img" src="images/photos/expert_3.webp" />
+              <img loading="lazy" decoding="async" alt="Смирнов Олег — главный врач, имплантолог" class="experts__bottom-img" src="images/photos/expert_3.webp" />
               <span class="experts__bottom-number">03</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -487,7 +493,7 @@
                 <p>Стаж: 11 лет</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 4" class="experts__bottom-img" src="images/photos/expert_4.webp" />
+              <img loading="lazy" decoding="async" alt="Козлова Мария — стоматолог-терапевт" class="experts__bottom-img" src="images/photos/expert_4.webp" />
               <span class="experts__bottom-number">04</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -514,7 +520,7 @@
                 <p>Стаж: 16 лет</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 5" class="experts__bottom-img" src="images/photos/expert_5.webp" />
+              <img loading="lazy" decoding="async" alt="Васильев Игорь — врач-ортодонт" class="experts__bottom-img" src="images/photos/expert_5.webp" />
               <span class="experts__bottom-number">05</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -541,7 +547,7 @@
                 <p>Стаж: 25 лет</p>
                 <p>Сертификаты</p>
               </div>
-              <img alt="Expert 6" class="experts__bottom-img" src="images/photos/expert_6.webp" />
+              <img loading="lazy" decoding="async" alt="Попова Елена — пародонтолог" class="experts__bottom-img" src="images/photos/expert_6.webp" />
               <span class="experts__bottom-number">06</span>
               <div class="experts__bottom-bottom-mask">
                 <div class="experts__card-bg-high"></div>
@@ -565,7 +571,7 @@
             </li>
           </ul>
           <button class="experts__bottom-button" id="experts-show-more" type="button">
-            <img alt="Experts  Bottom Button" class="experts__bottom-button-img"
+            <img aria-hidden="true" loading="lazy" decoding="async" alt="" class="experts__bottom-button-img"
               src="images/icons/experts__bottom-button.svg" />Показать больше
           </button>
         </div>
@@ -652,7 +658,7 @@
             <div class="reviews__cards-wrapper">
               <ul class="reviews__cards-list" id="reviews-cards-list">
                 <li class="reviews__card">
-                  <img alt="Пациентка клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациентка клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-1.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">4 импланта Nobel<br />и несъёмный протез</h3>
@@ -670,7 +676,7 @@
                   </div>
                 </li>
                 <li class="reviews__card">
-                  <img alt="Пациентка клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациентка клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-2.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">Установили за 2 визита</h3>
@@ -688,7 +694,7 @@
                   </div>
                 </li>
                 <li class="reviews__card">
-                  <img alt="Пациент клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациент клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-3.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">6 имплантов Straumann<br />и полный протез</h3>
@@ -705,7 +711,7 @@
                   </div>
                 </li>
                 <li class="reviews__card">
-                  <img alt="Пациентка клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациентка клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-4.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">Эстетическая<br />реставрация</h3>
@@ -723,7 +729,7 @@
                   </div>
                 </li>
                 <li class="reviews__card">
-                  <img alt="Пациент клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациент клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-5.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">Сложное<br />удаление зуба</h3>
@@ -741,7 +747,7 @@
                   </div>
                 </li>
                 <li class="reviews__card">
-                  <img alt="Пациент клиники Венеция" class="reviews__card-photo"
+                  <img loading="lazy" decoding="async" alt="Пациент клиники Венеция" class="reviews__card-photo"
                     src="images/photos/reviews__card-photo-6.webp" />
                   <div class="reviews__card-body">
                     <h3 class="reviews__card-title">Протезирование<br />на имплантах</h3>
@@ -899,21 +905,20 @@
         </div>
       </div>
     </section>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <section class="contacts" id="contacts">
       <div class="container contacts__container">
         <div class="contacts__media">
           <div class="contacts__map-wrapper">
             <div class="contacts__map-cutout"></div>
-            <div class="contacts__map" id="contacts-map"></div>
+            <div class="contacts__map" id="contacts-map" role="region" aria-label="Карта клиник Венеция на Яндекс.Картах"></div>
           </div>
           <div class="contacts__gallery">
             <div class="contacts__gallery-slides" id="contacts-gallery">
-              <img alt="Клиника 1" class="contacts__gallery-img active" src="images/photos/clinic_1.webp" />
-              <img alt="Клиника 2" class="contacts__gallery-img" src="images/photos/clinic_2.webp" />
-              <img alt="Клиника 3" class="contacts__gallery-img" src="images/photos/new_clinic_1.webp" />
-              <img alt="Клиника 4" class="contacts__gallery-img" src="images/photos/new_clinic_2.webp" />
-              <img alt="Клиника 5" class="contacts__gallery-img" src="images/photos/new_clinic_3.webp" />
+              <img loading="lazy" decoding="async" alt="Интерьер клиники Венеция, фото 1" class="contacts__gallery-img active" src="images/photos/clinic_1.webp" />
+              <img loading="lazy" decoding="async" alt="Интерьер клиники Венеция, фото 2" class="contacts__gallery-img" src="images/photos/clinic_2.webp" />
+              <img loading="lazy" decoding="async" alt="Интерьер клиники Венеция, фото 3" class="contacts__gallery-img" src="images/photos/new_clinic_1.webp" />
+              <img loading="lazy" decoding="async" alt="Интерьер клиники Венеция, фото 4" class="contacts__gallery-img" src="images/photos/new_clinic_2.webp" />
+              <img loading="lazy" decoding="async" alt="Интерьер клиники Венеция, фото 5" class="contacts__gallery-img" src="images/photos/new_clinic_3.webp" />
             </div>
             <div class="contacts__gallery-controls">
               <button aria-label="Предыдущее фото" class="contacts__gallery-btn prev" id="contacts-prev">

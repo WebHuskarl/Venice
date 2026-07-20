@@ -133,8 +133,8 @@ export function initModals() {
 
   const callHtml = `
     <div class="modal-form" style="background: #EEF2FF; padding: 24px; border-radius: 20px; position: relative;">
-      <button type="button" class="modal-form-close" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; background: #fff; border: none; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <button type="button" class="modal-form-close" aria-label="Закрыть" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; background: #fff; border: none; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6L18 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
 
       <div class="modal-form__layout" style="display: flex; flex-direction: row; width: 100%; max-width: 900px; margin: 0 auto;">
@@ -155,7 +155,8 @@ export function initModals() {
         
         <div class="modal-form__right" style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
           <h4 class="modal-form__right-title" style="margin-bottom: 24px;">Записаться</h4>
-          <input type="tel" class="modal-form__input" placeholder="+7 (999) 999-99-99" style="margin-bottom: 16px;">
+          <label class="visually-hidden" for="modal-call-phone">Номер телефона</label>
+          <input type="tel" class="modal-form__input" id="modal-call-phone" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" style="margin-bottom: 16px;">
           <button class="modal-form__btn" type="button" style="margin-bottom: 24px;">Отправить</button>
           <div class="modal-form__agreements">
             <label class="modal-form__checkbox-label">
@@ -177,7 +178,7 @@ export function initModals() {
       <div class="calc__quiz-bg"></div>
       <div class="calc__quiz-tab">
         <span class="calc__quiz-step" style="color: #fff; font-weight: 500; font-size: 16px;">Шаг 1/5</span>
-        <button type="button" class="calc-close" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: #fff; font-size: 24px; cursor: pointer; line-height: 1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='scale(1)'">&times;</button>
+        <button type="button" class="calc-close" aria-label="Закрыть калькулятор" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: #fff; font-size: 24px; cursor: pointer; line-height: 1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='scale(1)'">&times;</button>
       </div>
       <div class="calc__quiz-header">
         <p>Ответьте на 4 вопроса и получите расчет + подарки от клиники</p>

@@ -8,7 +8,6 @@ export function initContacts() {
       const first = slides.querySelector('.contacts__gallery-img');
       if (!first) return slides.clientWidth;
       const gap = parseFloat(getComputedStyle(slides).gap) || 0;
-      // На мобилке 1 фото = 100% ширины; на десктопе — ширина карточки + gap
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       return isMobile
         ? first.offsetWidth
@@ -34,64 +33,99 @@ export function initContacts() {
     });
   }
 
-  // Карту грузим лениво — иначе ymaps фокусит контейнер при загрузке страницы
   const mapEl = document.getElementById('contacts-map');
-  if (typeof ymaps !== 'undefined' && mapEl) {
-    const startMap = () => ymaps.ready(initMap);
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        if (entries.some(e => e.isIntersecting)) {
+  if (!mapEl) return;
+
+  const loadYmaps = () =>
+    new Promise((resolve, reject) => {
+      if (window.ymaps) {
+        resolve();
+        return;
+      }
+      const existing = document.querySelector('script[data-ymaps]');
+      if (existing) {
+        existing.addEventListener('load', () => resolve(), { once: true });
+        existing.addEventListener('error', reject, { once: true });
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+      script.async = true;
+      script.dataset.ymaps = 'true';
+      script.onload = () => resolve();
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+
+  const startMap = () => {
+    loadYmaps()
+      .then(() => {
+        if (window.ymaps) window.ymaps.ready(initMap);
+      })
+      .catch(() => {});
+  };
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
           io.disconnect();
           startMap();
         }
-      }, { rootMargin: '80px' });
-      io.observe(mapEl);
-    } else {
-      startMap();
-    }
+      },
+      { rootMargin: '120px' }
+    );
+    io.observe(mapEl);
+  } else {
+    startMap();
   }
 
   function initMap() {
-    const mapEl = document.getElementById('contacts-map');
-    if (!mapEl) return;
+    const mapNode = document.getElementById('contacts-map');
+    if (!mapNode) return;
 
-    // Яндекс.Карта при init фокусит контейнер и сдвигает скролл
-  const savedY = window.scrollY;
-  const html = document.documentElement;
-  const prevBehavior = html.style.scrollBehavior;
-  html.style.scrollBehavior = 'auto';
+    const savedY = window.scrollY;
+    const html = document.documentElement;
+    const prevBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
 
-    const myMap = new ymaps.Map("contacts-map", {
-      center: [55.772, 37.605],
-      zoom: 13,
-      controls: []
-    }, {
-      suppressMapOpenBlock: true
-    });
+    const myMap = new ymaps.Map(
+      'contacts-map',
+      {
+        center: [55.772, 37.605],
+        zoom: 13,
+        controls: [],
+      },
+      {
+        suppressMapOpenBlock: true,
+      }
+    );
 
     myMap.controls.add('zoomControl', {
       position: {
         right: 10,
-        top: 10
-      }
+        top: 10,
+      },
     });
 
     const placemarks = [
-      [55.7698, 37.5960], // Маяковская
-      [55.7801, 37.6015], // Новослободская
-      [55.7716, 37.6205], // Цветной бульвар
-      [55.7812, 37.5995]  // Менделеевская
+      [55.7698, 37.596],
+      [55.7801, 37.6015],
+      [55.7716, 37.6205],
+      [55.7812, 37.5995],
     ];
 
-    placemarks.forEach(coords => {
-      myMap.geoObjects.add(new ymaps.Placemark(coords, {}, {
-        preset: 'islands#blueCircleDotIcon'
-      }));
+    placemarks.forEach((coords) => {
+      myMap.geoObjects.add(
+        new ymaps.Placemark(coords, {}, {
+          preset: 'islands#blueCircleDotIcon',
+        })
+      );
     });
 
     const restoreScroll = () => {
       window.scrollTo(0, savedY);
-      if (document.activeElement && mapEl.contains(document.activeElement)) {
+      if (document.activeElement && mapNode.contains(document.activeElement)) {
         document.activeElement.blur();
       }
     };
@@ -102,8 +136,6 @@ export function initContacts() {
       html.style.scrollBehavior = prevBehavior;
     }, 0);
 
-    // Ресайз/смена брейкпоинта меняет размер контейнера карты.
-    // Без ручного пересчёта Яндекс-карта оставляет серые/битые тайлы.
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);

@@ -3,14 +3,45 @@ export function initVideo() {
     const video = wrapper.querySelector('video');
     if (!video) return;
 
+    const isMobileHero = window.matchMedia('(max-width: 1279px)').matches;
+    if (isMobileHero) {
+      video.removeAttribute('src');
+      video.removeAttribute('autoplay');
+      video.load();
+      return;
+    }
+
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
     video.loop = true;
-    video.preload = 'auto';
+    video.preload = 'metadata';
+
+    if (!wrapper.hasAttribute('role')) {
+      wrapper.setAttribute('role', 'button');
+    }
+    if (!wrapper.hasAttribute('tabindex')) {
+      wrapper.setAttribute('tabindex', '0');
+    }
+    if (!wrapper.hasAttribute('aria-label')) {
+      wrapper.setAttribute(
+        'aria-label',
+        'Видео имплантации All-on-6. Нажмите, чтобы поставить на паузу или воспроизвести'
+      );
+    }
+    video.setAttribute('aria-hidden', 'true');
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let userPaused = reduceMotion;
+
+    const syncLabel = () => {
+      wrapper.setAttribute(
+        'aria-label',
+        video.paused
+          ? 'Видео на паузе. Нажмите, чтобы воспроизвести'
+          : 'Видео воспроизводится. Нажмите, чтобы поставить на паузу'
+      );
+    };
 
     const markReady = () => {
       video.classList.add('is-ready');
@@ -29,20 +60,7 @@ export function initVideo() {
       if (playPromise) playPromise.catch(() => {});
     };
 
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.intersectionRatio <= 0 || !entry.isIntersecting) {
-          video.pause();
-          return;
-        }
-        tryPlay();
-      },
-      { threshold: [0, 0.01] }
-    );
-
-    io.observe(wrapper);
-
-    wrapper.addEventListener('click', () => {
+    const toggle = () => {
       if (video.paused) {
         userPaused = false;
         tryPlay();
@@ -50,9 +68,34 @@ export function initVideo() {
         userPaused = true;
         video.pause();
       }
+      syncLabel();
+    };
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio <= 0 || !entry.isIntersecting) {
+          video.pause();
+          syncLabel();
+          return;
+        }
+        tryPlay();
+        syncLabel();
+      },
+      { threshold: [0, 0.01] }
+    );
+
+    io.observe(wrapper);
+
+    wrapper.addEventListener('click', toggle);
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
     });
 
     if (!reduceMotion) tryPlay();
     else markReady();
+    syncLabel();
   });
 }
