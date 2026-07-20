@@ -181,6 +181,14 @@
     box-shadow: var(--hover-shadow-sm);
   }
 
+  /* Hero doctor portrait */
+  .hero__info-picture:hover {
+    animation-play-state: paused;
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: var(--hover-shadow);
+    background-size: 108% auto;
+  }
+
   /* Плашки с clip-path — drop-shadow + лёгкий brightness */
   .calc__sale,
   .consultation__sale,
@@ -727,6 +735,7 @@ button[disabled],
   .contacts__card,
   .hero__info-action,
   .hero__info-price,
+  .hero__info-picture,
   .hero__video-preview-block,
   .hero__video-item,
   .calc__quiz-label,

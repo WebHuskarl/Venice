@@ -232,6 +232,30 @@
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 100% auto;
+  overflow: hidden;
+  cursor: default;
+  isolation: isolate;
+  transition:
+    transform 0.4s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow 0.4s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)),
+    background-size 0.55s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+  animation: hero-doctor-float 5.5s ease-in-out infinite;
+}
+
+@keyframes hero-doctor-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__info-picture {
+    animation: none;
+  }
 }
 
 /* Мобильное фото — только ≤1279 */
