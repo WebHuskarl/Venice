@@ -8,16 +8,29 @@
   <meta
     content="Клиника зубной имплантации Венеция — новые зубы за 1 день. Швейцарские технологии, анестезия нового поколения, гарантия приживаемости до 99%."
     name="description" />
+  <meta content="index, follow" name="robots" />
+  <link href="index.html" rel="canonical" />
   <title>Венеция — клиника зубной имплантации</title>
-  <link href="css/index.css?v=36" rel="stylesheet" />
-  <script src="js/main.js?v=36" type="module"></script>
+  <link href="css/index.css?v=48" rel="stylesheet" />
+  <script>
+    (function () {
+      try { history.scrollRestoration = 'manual'; } catch (e) {}
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      document.documentElement.classList.add('scroll-lock-boot');
+      window.scrollTo(0, 0);
+    })();
+  </script>
+  <script src="js/main.js?v=48" type="module"></script>
 </head>
 
 <body>
   <header class="header">
     <div class="container header__container">
-      <a class="header__logo" href="#">
-        <svg height="70" viewbox="0 0 260 70" width="260" xmlns="http://www.w3.org/2000/svg">
+      <a aria-label="Венеция — на главную" class="header__logo" href="index.html">
+        <span class="visually-hidden">Венеция — клиника зубной имплантации</span>
+        <svg aria-hidden="true" focusable="false" height="70" viewbox="0 0 260 70" width="260" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"
             transform="translate(5,5)">
             <path d="M30 6
@@ -54,31 +67,31 @@
       <button class="header__call-button" type="button">
         Перезвоните мне
       </button>
-      <button aria-controls="header-nav" aria-expanded="false" aria-label="Кнопка"
-        class="header__menu header__burger burger-button" data-burger-toggle="">
+      <button aria-controls="header-nav" aria-expanded="false" aria-label="Открыть меню"
+        class="header__menu header__burger burger-button" data-burger-toggle="" type="button">
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
       </button>
-      <nav class="header__nav" id="header-nav">
-        <ul class="header__nav-list">
-          <li><a class="header__nav-link" href="#hero">Главная</a></li>
-          <li><a class="header__nav-link" href="#result">Результаты</a></li>
-          <li><a class="header__nav-link" href="#turnkey">Цены</a></li>
-          <li><a class="header__nav-link" href="#booking">Акции</a></li>
-          <li><a class="header__nav-link" href="#experts">Врачи</a></li>
-          <li><a class="header__nav-link" href="#consultation">Консультация</a></li>
-          <li><a class="header__nav-link" href="#reviews">Отзывы</a></li>
-          <li><a class="header__nav-link" href="#contacts">Контакты</a></li>
-        </ul>
-        <div class="header__nav-actions">
-          <a class="header__nav-phone" href="tel:+78000000000">+7 (800) 000‑00‑00</a>
-          <span class="header__nav-worktime">09:00-21:30</span>
-          <button class="header__nav-call" type="button">Перезвоните мне</button>
-        </div>
-      </nav>
     </div>
   </header>
+  <nav aria-label="Основное меню" class="header__nav" id="header-nav" hidden>
+    <ul class="header__nav-list">
+      <li><a class="header__nav-link" href="#hero">Главная</a></li>
+      <li><a class="header__nav-link" href="#result">Результаты</a></li>
+      <li><a class="header__nav-link" href="#turnkey">Цены</a></li>
+      <li><a class="header__nav-link" href="#booking">Акции</a></li>
+      <li><a class="header__nav-link" href="#experts">Врачи</a></li>
+      <li><a class="header__nav-link" href="#consultation">Консультация</a></li>
+      <li><a class="header__nav-link" href="#reviews">Отзывы</a></li>
+      <li><a class="header__nav-link" href="#contacts">Контакты</a></li>
+    </ul>
+    <div class="header__nav-actions">
+      <a class="header__nav-phone" href="tel:+78000000000">+7 (800) 000‑00‑00</a>
+      <span class="header__nav-worktime">09:00-21:30</span>
+      <button class="header__nav-call" type="button">Перезвоните мне</button>
+    </div>
+  </nav>
   <main class="main">
     <section class="hero" id="hero">
       <div class="container hero__container">
@@ -320,9 +333,9 @@
           <span class="booking__title-span">с выгодой 70 000 ₽</span>
         </h2>
         <div class="booking__content">
-          <form action="#" class="booking__form">
+          <form action="" class="booking__form" method="post">
             <label class="booking__form-label-tel" for="booking-phone">Записаться</label>
-            <input autocomplete="tel" class="booking__form-input-tel" id="booking-phone" name="booking-phone"
+            <input autocomplete="off" class="booking__form-input-tel" id="booking-phone" name="booking-phone"
               placeholder="+7 (999) 999-99-99" type="tel" />
             <button class="booking__form-button" type="submit">Получить расчёт</button>
             <label class="booking__form-agreement-wrapper" for="booking-agreement">
@@ -330,7 +343,7 @@
                 type="checkbox" value="agreement" />
               <span class="booking__form-checkbox-custom"></span>
               <span class="booking__form-label-agreement">Нажимая кнопку, вы соглашаетесь c
-                <a href="#">условиями политики конфиденциальности.</a>
+                <a href="privacy.html">условиями политики конфиденциальности.</a>
               </span>
             </label>
           </form>
@@ -566,10 +579,10 @@
             <p class="consultation__content-descr">к ведущим врачам<br />по доступной цене</p>
           </div>
           <div class="consultation__content-media">
-            <form action="#" class="consultation__form">
+            <form action="" class="consultation__form" method="post">
               <label class="consultation__form-label consultation-form__label--tel" for="user-phone">Записаться на
                 бесплатную консультацию сейчас</label>
-              <input class="consultation__form-input consultation-form__input--tel" id="user-phone" name="user-phone"
+              <input autocomplete="off" class="consultation__form-input consultation-form__input--tel" id="user-phone" name="user-phone"
                 placeholder="+7 (999) 999-99-99" type="tel" />
               <button class="consultation__form-button" type="submit">Получить расчёт</button>
               <label class="consultation__form-agreement" for="consultation-agreement">
@@ -578,7 +591,7 @@
                 <span class="consultation__form-checkbox-custom"></span>
                 <span class="consultation__form-checkbox-label">
                   Нажимая кнопку, вы соглашаетесь c
-                  <a href="#">условиями политики конфиденциальности.</a>
+                  <a href="privacy.html">условиями политики конфиденциальности.</a>
                 </span>
               </label>
             </form>
@@ -903,12 +916,12 @@
               <img alt="Клиника 5" class="contacts__gallery-img" src="images/photos/new_clinic_3.webp" />
             </div>
             <div class="contacts__gallery-controls">
-              <button aria-label="Иконка" class="contacts__gallery-btn prev" id="contacts-prev">
+              <button aria-label="Предыдущее фото" class="contacts__gallery-btn prev" id="contacts-prev">
                 <svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24">
                   <path d="M15 18l-6-6 6-6"></path>
                 </svg>
               </button>
-              <button aria-label="Иконка" class="contacts__gallery-btn next" id="contacts-next">
+              <button aria-label="Следующее фото" class="contacts__gallery-btn next" id="contacts-next">
                 <svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24">
                   <path d="M9 18l6-6-6-6"></path>
                 </svg>
@@ -984,8 +997,9 @@
   <footer class="footer">
     <div class="container footer__container">
       <div class="footer__col">
-        <a class="footer__logo" href="#">
-          <svg height="70" viewbox="0 0 260 70" width="260" xmlns="http://www.w3.org/2000/svg">
+        <a aria-label="Венеция — на главную" class="footer__logo" href="index.html">
+          <span class="visually-hidden">Венеция — клиника зубной имплантации</span>
+          <svg aria-hidden="true" focusable="false" height="70" viewbox="0 0 260 70" width="260" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"
               transform="translate(5,5)">
               <path
@@ -1008,8 +1022,8 @@
         </p>
       </div>
       <div class="footer__col footer__col--nav">
-        <a class="footer__link" href="#">Лицензия и реквизиты</a>
-        <a class="footer__link" href="#">Политика конфиденциальности</a>
+        <a class="footer__link" href="license.html">Лицензия и реквизиты</a>
+        <a class="footer__link" href="privacy.html">Политика конфиденциальности</a>
       </div>
       <div class="footer__col footer__col--right">
         <div class="footer__contacts">

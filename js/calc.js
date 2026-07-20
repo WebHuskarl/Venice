@@ -82,11 +82,11 @@ export function initCalc() {
             <div class="calc__form-agreements">
               <label class="calc__form-checkbox-label">
                 <input type="checkbox" class="calc__form-checkbox" checked>
-                <span>Я согласен на <a href="#">Обработку персональных данных</a></span>
+                <span>Я согласен на <a href="privacy.html">Обработку персональных данных</a></span>
               </label>
               <label class="calc__form-checkbox-label">
                 <input type="checkbox" class="calc__form-checkbox" checked>
-                <span>Я ознакомлен и согласен с <a href="#">Условиями сбора персональных данных</a> в соответствии с <a href="#">Политикой конфиденциальности</a></span>
+                <span>Я ознакомлен и согласен с <a href="privacy.html">Условиями сбора персональных данных</a> в соответствии с <a href="privacy.html">Политикой конфиденциальности</a></span>
               </label>
             </div>
           </div>
@@ -160,8 +160,7 @@ export function initCalc() {
             const closeBtn = document.querySelector('.calc-close');
             if (closeBtn) closeBtn.click();
           } else {
-            window.location.href = '#hero';
-            location.reload();
+            window.location.href = 'index.html';
           }
         });
 

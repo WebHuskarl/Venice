@@ -39,7 +39,7 @@
   --container-width: 1280px;
   --card-gap: 30px;
 
-  --z-header: 100;
-  --z-menu:   200;
-  --z-modal:  300;
+  --z-header: 6100;
+  --z-menu:   6000;
+  --z-modal:  10000;
 }

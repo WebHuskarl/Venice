@@ -44,7 +44,7 @@ export function initContacts() {
           io.disconnect();
           startMap();
         }
-      }, { rootMargin: '200px' });
+      }, { rootMargin: '80px' });
       io.observe(mapEl);
     } else {
       startMap();

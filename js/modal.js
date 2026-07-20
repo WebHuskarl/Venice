@@ -160,11 +160,11 @@ export function initModals() {
           <div class="modal-form__agreements">
             <label class="modal-form__checkbox-label">
               <input type="checkbox" class="modal-form__checkbox" checked>
-              <span>Я согласен на <a href="#">Обработку персональных данных</a></span>
+              <span>Я согласен на <a href="privacy.html">Обработку персональных данных</a></span>
             </label>
             <label class="modal-form__checkbox-label">
               <input type="checkbox" class="modal-form__checkbox">
-              <span>Я ознакомлен и согласен с <a href="#">Условиями сбора</a> в соответствии с <a href="#">Политикой</a></span>
+              <span>Я ознакомлен и согласен с <a href="privacy.html">Условиями сбора</a> в соответствии с <a href="privacy.html">Политикой</a></span>
             </label>
           </div>
         </div>
