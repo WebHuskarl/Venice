@@ -4,6 +4,37 @@ html {
   overflow-x: hidden;
 }
 
+:root {
+  --page-zoom: 1;
+}
+
+/*
+  Ноутбуки / типичные окна ≤1680px:
+  zoom: 0.9 ≈ браузерный масштаб 90%.
+*/
+@media (max-width: 1680px) {
+  :root {
+    --page-zoom: 0.9;
+  }
+
+  html {
+    zoom: var(--page-zoom);
+  }
+}
+
+/* Fallback, если zoom недоступен */
+@supports not (zoom: 1) {
+  @media (max-width: 1680px) {
+    html {
+      font-size: 56.25%;
+    }
+
+    :root {
+      --page-zoom: 1;
+    }
+  }
+}
+
 html.scroll-lock-boot {
   scroll-behavior: auto !important;
 }
@@ -24,9 +55,9 @@ body {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
-	min-width: 360px;
+  min-width: 360px;
   line-height: 120%;
- }
+}
 
 a {
   text-decoration: none;
@@ -74,6 +105,32 @@ h3 {
 
 img {
   max-width: 100%;
+}
+
+/*
+  clip-path: path() в абсолютных px — размер элемента должен совпадать с path.
+  Не даём глобальному max-width сжимать фото/плашки с вырезами.
+*/
+.hero__video-mask,
+.reviews__card-photo,
+.reviews__right-badge,
+.experts__top-successes,
+.turnkey__countries-block,
+.booking__countdown,
+.booking__contact,
+.calc__sale,
+.consultation__sale,
+.consultation__content-media-doctor-text,
+.result__media-doctor,
+.result__media-plan {
+  max-width: none;
+}
+
+/* На ≤1279 глобально центрируют __card через margin:auto — ломает трек слайдера */
+.reviews__card,
+.reviews__cards-list .reviews__card {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .container {

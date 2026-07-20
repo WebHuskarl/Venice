@@ -1,12 +1,16 @@
 .modal-overlay {
   position: fixed;
-  inset: 0;
-  width: auto;
-  height: 100dvh;
+  top: 0;
+  left: 0;
+  /* При html { zoom } fixed 100vh не кроет весь экран — компенсируем */
+  width: calc(100vw / var(--page-zoom, 1));
+  height: calc(100vh / var(--page-zoom, 1));
+  min-height: calc(100dvh / var(--page-zoom, 1));
   box-sizing: border-box;
   padding: 2rem;
+  margin: 0;
   background: rgba(20, 24, 32, 0.82);
-  z-index: 10000;
+  z-index: var(--z-modal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,34 +370,38 @@ body.modal-open {
   width: 100%; 
   height: 100%;
   z-index: -1;
+  /* +2px overlap на тайлах — убирает «швы» на дробном zoom */
   background-image: 
     linear-gradient(#fff, #fff),
     linear-gradient(#fff, #fff),
     linear-gradient(#fff, #fff),
     linear-gradient(#fff, #fff),
-    radial-gradient(circle at bottom left, #fff 2.4rem, transparent 2.45rem),
-    radial-gradient(circle at top right, transparent 2.4rem, #fff 2.45rem),
-    radial-gradient(circle at bottom left, #fff 2.4rem, transparent 2.45rem);
+    radial-gradient(circle at bottom left, #fff 2.5rem, transparent 2.55rem),
+    radial-gradient(circle at top right, transparent 2.35rem, #fff 2.4rem),
+    radial-gradient(circle at bottom left, #fff 2.5rem, transparent 2.55rem);
   background-position: 
     left 0 top 0,
-    right 18rem top 2.4rem,
-    right 0 top 8.4rem,
-    right 2.4rem top 6rem,
-    right 18rem top 0,
-    right 15.6rem top 3.6rem,
-    right 0 top 6rem;
+    right calc(18rem - 1px) top calc(2.4rem - 1px),
+    right 0 top calc(8.4rem - 1px),
+    right calc(2.4rem - 1px) top calc(6rem - 1px),
+    right calc(18rem - 1px) top 0,
+    right calc(15.6rem - 1px) top calc(3.6rem - 1px),
+    right 0 top calc(6rem - 1px);
   background-size: 
-    calc(100% - 20.4rem) 100%,
-    2.4rem calc(100% - 2.4rem),
-    18rem calc(100% - 8.4rem),
-    15.6rem 2.4rem,
-    2.4rem 2.4rem,
-    2.4rem 2.4rem,
-    2.4rem 2.4rem;
+    calc(100% - 20.4rem + 2px) calc(100% + 2px),
+    calc(2.4rem + 2px) calc(100% - 2.4rem + 3px),
+    calc(18rem + 2px) calc(100% - 8.4rem + 3px),
+    calc(15.6rem + 3px) calc(2.4rem + 2px),
+    calc(2.4rem + 2px) calc(2.4rem + 2px),
+    calc(2.4rem + 2px) calc(2.4rem + 2px),
+    calc(2.4rem + 2px) calc(2.4rem + 2px);
   background-repeat: no-repeat;
   box-shadow: none;
   border-radius: 0;
   pointer-events: none;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .modal-container--calc .calc__quiz-bg::after {
   display: none !important;

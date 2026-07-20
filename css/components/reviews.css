@@ -87,8 +87,11 @@
   overflow: hidden;
   max-width: 100.6rem;
   margin: 0 auto;
-  /* боковые отступы через padding, чтобы карточки не прилипали к краям */
   box-sizing: border-box;
+  isolation: isolate;
+  contain: paint;
+  -webkit-mask-image: linear-gradient(#000, #000);
+  mask-image: linear-gradient(#000, #000);
 }
 
 .reviews__cards-list {
@@ -100,6 +103,7 @@
   padding: 0;
   margin: 0;
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .reviews__card {
@@ -112,20 +116,27 @@
 
 .reviews__card-photo {
   width: 322px;
+  max-width: none;
   height: 275px;
   object-fit: cover;
+  object-position: center center;
   display: block;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .reviews__card:nth-child(odd) .reviews__card-photo {
   clip-path: var(--clip-top-right);
+  height: 275px;
 }
 
 .reviews__card:nth-child(even) .reviews__card-photo {
   clip-path: var(--clip-top-left);
+  height: 270px;
 }
 
 .reviews__card-body {
@@ -173,6 +184,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  width: 100%;
 }
 
 .reviews__nav {
@@ -492,29 +505,34 @@
     padding-right: 0;
   }
 
-  /* Контейнер карусели получает боковые отступы */
   .reviews__content {
     width: 100%;
     padding: 0 24px;
     box-sizing: border-box;
   }
 
-  /* Wrapper карточек не должен вылезать за отступы */
+  /* clip-path path() требует ровно 322px — не растягиваем */
   .reviews__cards-wrapper {
-    width: 100%;
+    width: 322px;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* Одна карточка занимает всю доступную ширину минус отступы */
   .reviews__card {
-    flex: 0 0 100% !important;
-    width: 100% !important;
+    flex: 0 0 322px;
+    width: 322px;
     max-width: 322px;
   }
 
   .reviews__card-photo {
-    width: 100% !important;
-    max-width: 322px;
+    width: 322px;
+    height: 275px;
+    max-width: none;
+  }
+
+  .reviews__card:nth-child(even) .reviews__card-photo {
+    height: 270px;
   }
 
   .reviews__nav {

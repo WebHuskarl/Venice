@@ -19,6 +19,7 @@ function initCarousel() {
   let index = 0;
   let visible = 1;
   let currentGap = 30;
+  let cardWidth = 322;
   const GAP = 30;
   const CARD = 322;
 
@@ -28,46 +29,39 @@ function initCarousel() {
 
   function layout() {
     const available = wrapper.parentElement?.clientWidth || wrapper.clientWidth;
-    let cardW;
     currentGap = GAP;
+    // clip-path path() завязан на 322px — ширину карточки не меняем
+    cardWidth = CARD;
 
-    // При достаточной ширине карточки 322px — clip-path path() требует фиксированный размер
-    if (available >= CARD * 3 + GAP * 2 + 24) {
+    if (available >= CARD * 3 + GAP * 2) {
       visible = 3;
-      cardW = CARD;
-    } else if (available >= CARD * 2 + GAP + 24) {
+    } else if (available >= CARD * 2 + GAP) {
       visible = 2;
-      cardW = CARD;
-    } else if (available >= CARD) {
-      visible = 1;
-      cardW = CARD;
-      currentGap = 0;
     } else {
-      // уже уже 322px — на очень узких экранах подстраиваем
       visible = 1;
-      cardW = available;
       currentGap = 0;
     }
 
-    const trackWidth = visible * cardW + (visible - 1) * currentGap;
+    const trackWidth = visible * cardWidth + (visible - 1) * currentGap;
     wrapper.style.width = `${Math.min(trackWidth, available)}px`;
     wrapper.style.maxWidth = '100%';
     wrapper.style.marginLeft = 'auto';
     wrapper.style.marginRight = 'auto';
+    wrapper.style.overflow = 'hidden';
 
     list.style.gap = `${currentGap}px`;
     cards.forEach((card) => {
-      card.style.flex = `0 0 ${cardW}px`;
-      card.style.width = `${cardW}px`;
-      card.style.maxWidth = 'none';
+      card.style.flex = `0 0 ${cardWidth}px`;
+      card.style.width = `${cardWidth}px`;
+      card.style.maxWidth = `${cardWidth}px`;
+      card.style.minWidth = `${cardWidth}px`;
     });
 
     if (index > getMaxIndex()) index = getMaxIndex();
-    slide(cardW);
+    slide();
   }
 
-  function slide(cardW) {
-    const width = cardW || cards[0].getBoundingClientRect().width || CARD;
+  function slide() {
     const maxIndex = getMaxIndex();
     if (index > maxIndex) index = maxIndex;
 
@@ -87,7 +81,9 @@ function initCarousel() {
       }
     });
 
-    list.style.transform = `translateX(-${index * (width + currentGap)}px)`;
+    // Целые px — без getBoundingClientRect (на зуме даёт дроби и «щели»)
+    const offset = Math.round(index * (cardWidth + currentGap));
+    list.style.transform = `translate3d(-${offset}px, 0, 0)`;
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index >= maxIndex;
   }
