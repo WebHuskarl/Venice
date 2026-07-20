@@ -202,7 +202,15 @@
     width: 322px;
     height: 212px;
   }
-  .result__media-wrapper { margin-left: 0; width: 44rem; max-width: 100%; }
+  .result__media-wrapper { 
+    margin-left: 0;
+    width: 44rem;
+    max-width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+  }
   .result__media-doctor {
     width: 100%;
     max-width: 44rem;
@@ -211,8 +219,8 @@
     clip-path: none;
     border-radius: 2.4rem;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
   }
   .result__media-doctor-img {

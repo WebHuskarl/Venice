@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%; /* 1rem = 10px — фиксировано, иначе clip-path path() разъезжается */
+  font-size: 62.5%;
   overflow-x: hidden;
 }
 
@@ -65,7 +65,6 @@ img {
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-  /* Всегда боковые отступы — даже на ≥1280, чтобы ничего не липло к краю */
   padding: 0 2.4rem;
 }
 

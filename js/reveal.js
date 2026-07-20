@@ -1,12 +1,5 @@
-/**
- * Единая система scroll-reveal.
- * Размечает элементы автоматически → IntersectionObserver → .is-in
- * Варианты: up | down | left | right | scale | fade | title
- */
-
 const STAGGER_MS = 70;
 
-/** Правила: селектор → вариант анимации */
 const RULES = [
   {
     sel: [
@@ -88,9 +81,7 @@ const RULES = [
     stagger: true,
   },
   {
-    sel: [
-      'main .hero__video-preview-block',
-    ].join(','),
+    sel: ['main .hero__video-preview-block'].join(','),
     variant: 'scale',
   },
 ];
@@ -111,7 +102,6 @@ function applyRules() {
       continue;
     }
 
-    // Stagger относительно родителя — одинаковый ритм в списках
     const byParent = new Map();
     nodes.forEach((el) => {
       const parent = el.parentElement;
@@ -146,7 +136,6 @@ export function initReveal() {
     el.addEventListener('transitionend', done, { once: true });
   };
 
-  // Уже в viewport (hero и т.п.) — без ожидания скролла
   const io = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {

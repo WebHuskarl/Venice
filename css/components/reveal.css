@@ -1,8 +1,3 @@
-/* ── Scroll Reveal ─────────────────────────────────
-   Переиспользуемые появления: data-reveal="up|down|left|right|scale|fade"
-   Задержка: --reveal-delay (ставит JS для stagger)
-─────────────────────────────────────────────────── */
-
 [data-reveal] {
   --reveal-distance: 36px;
   --reveal-duration: 0.75s;
@@ -48,7 +43,6 @@
   will-change: auto;
 }
 
-/* Заголовки — чуть мягче и выше */
 [data-reveal="title"] {
   --reveal-distance: 28px;
   --reveal-duration: 0.85s;

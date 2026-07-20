@@ -34,8 +34,7 @@ export function initContacts() {
     });
   }
 
-  // Карту инициализируем только когда секция в зоне видимости —
-  // иначе ymaps фокусирует контейнер и страница уезжает вниз при загрузке.
+  // Карту грузим лениво — иначе ymaps фокусит контейнер при загрузке страницы
   const mapEl = document.getElementById('contacts-map');
   if (typeof ymaps !== 'undefined' && mapEl) {
     const startMap = () => ymaps.ready(initMap);
@@ -56,12 +55,11 @@ export function initContacts() {
     const mapEl = document.getElementById('contacts-map');
     if (!mapEl) return;
 
-    // Яндекс.Карта при создании фокусирует контейнер — из-за
-    // scroll-behavior: smooth страница уезжает вниз. Блокируем это.
-    const savedY = window.scrollY;
-    const html = document.documentElement;
-    const prevBehavior = html.style.scrollBehavior;
-    html.style.scrollBehavior = 'auto';
+    // Яндекс.Карта при init фокусит контейнер и сдвигает скролл
+  const savedY = window.scrollY;
+  const html = document.documentElement;
+  const prevBehavior = html.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
 
     const myMap = new ymaps.Map("contacts-map", {
       center: [55.772, 37.605],

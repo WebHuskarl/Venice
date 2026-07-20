@@ -8,7 +8,9 @@ import { initContacts } from './contacts.js';
 import { initTimer }   from './timer.js';
 import { initExperts } from './experts.js';
 import { initReveal }  from './reveal.js';
+import { initScrollGuard } from './scroll-guard.js';
 
+initScrollGuard();
 initMenu();
 initVideo();
 initForms();

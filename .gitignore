@@ -9,9 +9,9 @@ build/
 .cache/
 *.tmp
 *.DS_Store
-
-# Служебные файлы для визуальной проверки вёрстки (puppeteer)
-_*.mjs
 _shots/
+_*.mjs
 package.json
 package-lock.json
+*.py
+scratch_*.txt
