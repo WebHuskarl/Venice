@@ -28,7 +28,7 @@ export function initCalc() {
     const contentEl = quiz.querySelector('.calc__quiz-content');
     const stepEl = quiz.querySelector('.calc__quiz-step');
 
-    function renderStep(step) {
+    function renderStep(step, { shouldFocus = false } = {}) {
       if (step < 4) {
         const q = data[step];
         stepEl.textContent = `Шаг ${step + 1}/5`;
@@ -60,13 +60,16 @@ export function initCalc() {
 
         quiz.querySelector('#calc-next').addEventListener('click', () => {
           currentStep++;
-          renderStep(currentStep);
+          renderStep(currentStep, { shouldFocus: true });
         });
 
-        setTimeout(() => {
-          const checkedRadio = quiz.querySelector('.calc__quiz-radio-input:checked');
-          if (checkedRadio) checkedRadio.focus();
-        }, 50);
+        if (shouldFocus) {
+          setTimeout(() => {
+            const checkedRadio = quiz.querySelector('.calc__quiz-radio-input:checked');
+            // preventScroll — иначе браузер уводит страницу к квизу при загрузке
+            if (checkedRadio) checkedRadio.focus({ preventScroll: true });
+          }, 50);
+        }
       } else {
         stepEl.textContent = `Шаг 5/5`;
         contentEl.innerHTML = `
@@ -164,10 +167,12 @@ export function initCalc() {
           }
         });
 
-        setTimeout(() => {
-          const phoneInput = quiz.querySelector('#calc-phone');
-          if (phoneInput) phoneInput.focus();
-        }, 50);
+        if (shouldFocus) {
+          setTimeout(() => {
+            const phone = quiz.querySelector('#calc-phone');
+            if (phone) phone.focus({ preventScroll: true });
+          }, 50);
+        }
 
         phoneInput.addEventListener('input', function (e) {
           let val = this.value.replace(/\D/g, '');
@@ -210,6 +215,7 @@ export function initCalc() {
       }
     });
 
-    renderStep(currentStep);
+    // Первый рендер без focus — иначе страница прыгает к блоку расчёта
+    renderStep(currentStep, { shouldFocus: false });
   });
 }

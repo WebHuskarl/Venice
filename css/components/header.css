@@ -28,12 +28,6 @@
   padding-top: 2.4rem;
   padding-bottom: 2.4rem;
   padding-right: 0;
-  transition: padding 0.35s ease;
-}
-
-.header.is-scrolled .container.header__container {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
 }
 
 .header__logo {
@@ -290,12 +284,10 @@ body.nav-active .header.is-scrolled {
     gap: 1.6rem;
   }
 
-  .header.is-scrolled .header__container,
-  .header.is-scrolled .container.header__container,
   body.nav-active .header__container,
   body.nav-active .container.header__container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
   }
 
   .header__contacts,
