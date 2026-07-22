@@ -1,3 +1,5 @@
+import { reachGoal } from './metrika.js';
+
 function validatePhone(input) {
   const digits = input.value.replace(/\D/g, '');
   const isValid = digits.length === 11;
@@ -82,6 +84,7 @@ export function initForms() {
       if (!valid) return;
 
       // TODO: отправка на сервер
+      reachGoal('lead');
       alert('Заявка успешно отправлена!');
       form.reset();
     });

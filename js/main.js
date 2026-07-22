@@ -9,7 +9,9 @@ import { initTimer }   from './timer.js';
 import { initExperts } from './experts.js';
 import { initReveal }  from './reveal.js';
 import { initScrollGuard } from './scroll-guard.js';
+import { initMetrika } from './metrika.js';
 
+initMetrika();
 initScrollGuard();
 initMenu();
 initVideo();
