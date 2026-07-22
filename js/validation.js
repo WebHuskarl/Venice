@@ -84,6 +84,7 @@ export function initForms() {
       if (!valid) return;
 
       // TODO: отправка на сервер
+      // Как в Метрике: ym(..., 'reachGoal', 'lead')
       reachGoal('lead');
       alert('Заявка успешно отправлена!');
       form.reset();

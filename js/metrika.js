@@ -3,7 +3,7 @@
  * Подставьте ID счётчика из кабинета Метрики.
  * Пока ID = 0 — скрипт не грузится.
  */
-export const METRIKA_ID = 0;
+export const METRIKA_ID = 110942575;
 
 export function reachGoal(name) {
   if (!METRIKA_ID || typeof window.ym !== 'function') return;
